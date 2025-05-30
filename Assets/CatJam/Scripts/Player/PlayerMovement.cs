@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public float crouchSpeed = 2f;
+    public Transform target;
 
     [Header("Zemin Kontrolü")]
     public Transform groundCheck;
@@ -37,6 +38,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (target != null)
+        {
+        if (target.position.x > transform.position.x)
+            transform.localScale = new Vector3(1, 1, 1);
+        else
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
         if (!isDodging)
             moveInput = Input.GetAxisRaw("Horizontal");
 
@@ -83,13 +92,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void StartDodge()
-    {
-        isDodging = true;
-        dodgeTimer = dodgeDuration;
-        lastDodgeTime = Time.time;
-        dodgeDirection = new Vector2(transform.localScale.x, 0).normalized;
-    }
+void StartDodge()
+{
+    isDodging = true;
+    dodgeTimer = dodgeDuration;
+    lastDodgeTime = Time.time;
+
+    float dodgeDirX;
+
+    if (moveInput != 0)
+        dodgeDirX = Mathf.Sign(moveInput);
+    else
+        dodgeDirX = Mathf.Sign(transform.localScale.x);
+
+    dodgeDirection = new Vector2(dodgeDirX, 0).normalized;
+}
+
 
     void EndDodge()
     {
