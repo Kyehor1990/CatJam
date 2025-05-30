@@ -35,14 +35,14 @@ public class bossMovement : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
     void FollowPlayer()
     {
         Vector2 direction = (player.position - transform.position).normalized;
-        rb.velocity = direction * moveSpeed;
+        rb.linearVelocity = direction * moveSpeed;
     }
 
     IEnumerator PatternLoop()
@@ -99,12 +99,12 @@ public class bossMovement : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < jumpDuration)
         {
-            rb.velocity = jumpDir * jumpForce;
+            rb.linearVelocity = jumpDir * jumpForce;
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         yield return new WaitForSeconds(0.6f);
         Debug.Log("Jump Attack Ended");
@@ -118,7 +118,7 @@ public class bossMovement : MonoBehaviour
         {
             Vector2 dir = (player.position - transform.position).normalized;
             GameObject arm = Instantiate(stretchArmPrefab, transform.position, Quaternion.identity);
-            arm.GetComponent<Rigidbody2D>().velocity = dir * 8f;
+            arm.GetComponent<Rigidbody2D>().linearVelocity = dir * 8f;
         }
 
         yield return new WaitForSeconds(1f);
@@ -133,7 +133,7 @@ public class bossMovement : MonoBehaviour
         {
             Vector2 dir = (player.position - transform.position).normalized;
             GameObject proj = Instantiate(slimeProjectilePrefab, transform.position, Quaternion.identity);
-            proj.GetComponent<Rigidbody2D>().velocity = dir * 5f;
+            proj.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
         }
 
         yield return new WaitForSeconds(1.2f);
