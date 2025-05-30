@@ -1,20 +1,22 @@
 using System.Collections;
 using UnityEngine;
 
-
 public class bossMovement : MonoBehaviour
 {
     public enum AttackPattern
     {
-        Dash,
-        Shoot,
-        Summon
+        JumpOnPlayer,
+        StretchArm,
+        SlimeProjectile
     }
 
     public Transform player;
     public float moveSpeed = 2f;
     public float attackRange = 5f;
     public float patternDelay = 2f;
+
+    public GameObject stretchArmPrefab;
+    public GameObject slimeProjectilePrefab;
 
     private bool isAttacking = false;
     private Rigidbody2D rb;
@@ -33,14 +35,14 @@ public class bossMovement : MonoBehaviour
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
         }
     }
 
     void FollowPlayer()
     {
         Vector2 direction = (player.position - transform.position).normalized;
-        rb.linearVelocity = direction * moveSpeed;
+        rb.velocity = direction * moveSpeed;
     }
 
     IEnumerator PatternLoop()
@@ -70,63 +72,71 @@ public class bossMovement : MonoBehaviour
 
         switch (pattern)
         {
-            case AttackPattern.Dash:
-                yield return StartCoroutine(DashAttack());
+            case AttackPattern.JumpOnPlayer:
+                yield return StartCoroutine(JumpOnPlayer());
                 break;
 
-            case AttackPattern.Shoot:
-                yield return StartCoroutine(ShootAttack());
+            case AttackPattern.StretchArm:
+                yield return StartCoroutine(StretchArm());
                 break;
 
-            case AttackPattern.Summon:
-                yield return StartCoroutine(SummonMinions());
+            case AttackPattern.SlimeProjectile:
+                yield return StartCoroutine(SlimeProjectileAttack());
                 break;
         }
 
         isAttacking = false;
     }
 
-    IEnumerator DashAttack()
+    IEnumerator JumpOnPlayer()
     {
-        Debug.Log("Dash Attack Started");
+        Debug.Log("Jump Attack Started");
 
-        Vector2 dashDir = (player.position - transform.position).normalized;
-        float dashSpeed = 10f;
-        float dashTime = 0.3f;
+        Vector2 jumpDir = (player.position - transform.position).normalized;
+        float jumpForce = 15f;
+        float jumpDuration = 0.4f;
 
         float elapsed = 0f;
-        while (elapsed < dashTime)
+        while (elapsed < jumpDuration)
         {
-            rb.linearVelocity = dashDir * dashSpeed;
+            rb.velocity = jumpDir * jumpForce;
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
 
-        yield return new WaitForSeconds(0.5f); // Bekleme süresi
-        Debug.Log("Dash Attack Ended");
+        yield return new WaitForSeconds(0.6f);
+        Debug.Log("Jump Attack Ended");
     }
 
-    IEnumerator ShootAttack()
+    IEnumerator StretchArm()
     {
-        Debug.Log("Shoot Attack Started");
+        Debug.Log("Stretch Arm Attack Started");
 
-        // Burada mermi instantiate edebilirsin:
-        // Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        // Ya da yönlü ateşleme ekleyebilirsin.
+        if (stretchArmPrefab != null)
+        {
+            Vector2 dir = (player.position - transform.position).normalized;
+            GameObject arm = Instantiate(stretchArmPrefab, transform.position, Quaternion.identity);
+            arm.GetComponent<Rigidbody2D>().velocity = dir * 8f;
+        }
 
         yield return new WaitForSeconds(1f);
-        Debug.Log("Shoot Attack Ended");
+        Debug.Log("Stretch Arm Attack Ended");
     }
 
-    IEnumerator SummonMinions()
+    IEnumerator SlimeProjectileAttack()
     {
-        Debug.Log("Summon Minions Started");
+        Debug.Log("Slime Projectile Attack Started");
 
-        // Instantiate(minionPrefab, transform.position + offset, Quaternion.identity);
+        if (slimeProjectilePrefab != null)
+        {
+            Vector2 dir = (player.position - transform.position).normalized;
+            GameObject proj = Instantiate(slimeProjectilePrefab, transform.position, Quaternion.identity);
+            proj.GetComponent<Rigidbody2D>().velocity = dir * 5f;
+        }
 
-        yield return new WaitForSeconds(1.5f);
-        Debug.Log("Summon Minions Ended");
+        yield return new WaitForSeconds(1.2f);
+        Debug.Log("Slime Projectile Attack Ended");
     }
 }
