@@ -2,27 +2,38 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Hızı ayarlamak için
+    [Header("Hareket Ayarları")]
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+
+    [Header("Zemin Kontrolü")]
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
 
     private Rigidbody2D rb;
-    private Vector2 movement;
+    private bool isGrounded;
+    private float moveInput;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D bileşenini al
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        // Input al
-        movement.x = Input.GetAxisRaw("Horizontal"); // A/D veya Sol/Sağ ok tuşları
-        movement.y = Input.GetAxisRaw("Vertical");   // W/S veya Yukarı/Aşağı ok tuşları
-        movement = movement.normalized; // Çapraz hareketleri sabitlemek için
+        moveInput = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
     }
 
     void FixedUpdate()
     {
-        // Rigidbody ile hareket ettir
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 }
