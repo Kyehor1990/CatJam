@@ -47,10 +47,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (target != null)
         {
+            float scaleX = transform.localScale.x;
             if (target.position.x > transform.position.x)
-                transform.localScale = new Vector3(1, 1, 1);
+                scaleX = Mathf.Abs(scaleX);
             else
-                transform.localScale = new Vector3(-1, 1, 1);
+                scaleX = Mathf.Abs(scaleX) * -1;
+
+            transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
 
         if (!isDodging && !isWallBouncing)

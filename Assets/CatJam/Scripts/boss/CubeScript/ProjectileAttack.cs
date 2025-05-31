@@ -1,0 +1,38 @@
+using UnityEngine;
+
+public class ProjectileAttack : MonoBehaviour
+{
+    public float speed = 10f;
+    public float lifetime = 5f;
+
+    [SerializeField] int damage = 10;
+
+    private Vector2 moveDirection;
+
+public void SetDirection(Vector2 direction)
+{
+    moveDirection = direction.normalized;
+
+    float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+    transform.rotation = Quaternion.Euler(0f, 0f, angle + 180f);
+}
+
+void Update()
+{
+    transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
+}
+
+    void Start()
+    {
+        Destroy(gameObject, lifetime);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHealth>()?.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
+}

@@ -47,8 +47,8 @@ GameObject:
   - component: {fileID: 300875361348389329}
   - component: {fileID: 8128943475245008321}
   m_Layer: 0
-  m_Name: player
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,8 +218,6 @@ MonoBehaviour:
   wallBounceForceX: 8
   wallBounceForceY: 14
   wallBounceLockTime: 1
-  stres: 0
-  tauntDuration: 1
 --- !u!70 &300875361348389329
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
