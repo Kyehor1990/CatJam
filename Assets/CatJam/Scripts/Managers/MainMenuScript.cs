@@ -6,6 +6,16 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private string firstLevelSceneName = "Boss1Scene"; // İlk sahne adı
     [SerializeField] private GameObject settingsPanel; // Ayarlar paneli
 
+    
+    void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Escape) && settingsPanel.activeSelf)
+    {
+        CloseSettings();
+    }
+}
+
+
     public void PlayGame()
     {
         SceneManager.LoadScene(firstLevelSceneName);
