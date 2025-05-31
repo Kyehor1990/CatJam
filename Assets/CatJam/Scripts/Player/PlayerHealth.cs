@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
+    public int maxHealth = 100;
     private int currentHealth;
 
     [SerializeField] Slider healthSlider;
