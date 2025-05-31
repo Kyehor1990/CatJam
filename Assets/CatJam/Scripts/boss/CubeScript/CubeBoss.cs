@@ -9,6 +9,7 @@ public class CubeBoss : MonoBehaviour
     public Transform projectileSpawnPoint;
 
     public GameObject spikePrefab;
+    public Transform spikeSpawnPoint;
 
     public Transform player;
 
@@ -22,7 +23,7 @@ public class CubeBoss : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        attackType = 1;
+        cooldownTimer = attackCooldown;
     }
 
     void Update()
@@ -37,47 +38,77 @@ public class CubeBoss : MonoBehaviour
 
             transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            PerformAttack();
+        }
+
         if (isAttacking) return;
 
         cooldownTimer -= Time.deltaTime;
 
-        /*if (cooldownTimer <= 0)
+        if (cooldownTimer <= 0f)
         {
-            attackType = Random.Range(0, 3); // 0: Lazer, 1: Mermi, 2: Diken
-            animator.SetInteger("AttackType", attackType);
-            animator.SetBool("IsAttacking", true); // Animasyon başlatılır
-            isAttacking = true;
-        }*/
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            PerformAttack();
-            Debug.Log("Attack performed: " + attackType);
+            ChooseRandomAttack();
         }
     }
 
-    // Animasyon olayında çağrılacak
+    void ChooseRandomAttack()
+    {
+        attackType = Random.Range(0, 3); // 0: Lazer, 1: Mermi, 2: Diken
+        isAttacking = true;
+
+        attackType = 2;
+
+        // Saldırı türüne göre animasyon tetikleyelim
+        switch (attackType)
+        {
+            case 0:
+                animator.SetTrigger("LaserAttack");
+                break;
+            case 1:
+                animator.SetTrigger("ProjectileAttack");
+                break;
+            case 2:
+                animator.SetTrigger("SpikeAttack");
+                break;
+        }
+    }
+
     public void PerformAttack()
     {
         switch (attackType)
         {
-            case 0:
+            case 0: // Lazer
                 Instantiate(laserPrefab, laserSpawnPoint.position, Quaternion.identity);
                 break;
-            case 1:
-                Debug.Log("Projectile Attack");
+
+            case 1: // Mermi
                 GameObject proj = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
                 Vector2 direction = new Vector2(player.position.x - projectileSpawnPoint.position.x, 0).normalized;
                 proj.GetComponent<ProjectileAttack>().SetDirection(direction);
+                break;
 
-                break;
-            case 2:
-                Vector3 spikePosition = new Vector3(player.position.x, transform.position.y, 0);
-                Instantiate(spikePrefab, spikePosition, Quaternion.identity);
-                break;
+case 2:
+    GameObject spike = Instantiate(spikePrefab, spikeSpawnPoint.position, Quaternion.identity);
+
+    // Spike'ı oyuncuya döndür
+    if (player.position.x < transform.position.x)
+    {
+        spike.transform.localScale = new Vector3(-1, 1, 1); // sola bakacaksa yansı
+    }
+    else
+    {
+        spike.transform.localScale = new Vector3(1, 1, 1); // sağa bakacaksa düz
+    }
+    break;
         }
 
-        animator.SetBool("IsAttacking", false);
+        EndAttack();
+    }
+
+    public void EndAttack() // Bu da animasyon sonunda event olabilir
+    {
         isAttacking = false;
         cooldownTimer = attackCooldown;
     }
