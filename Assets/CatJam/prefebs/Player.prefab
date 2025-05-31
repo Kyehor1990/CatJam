@@ -63,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.35504, y: -1.65044, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.345431, y: 1.345431, z: 1.345431}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4792196215949300685}
@@ -149,8 +149,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &7021422675788486985
 CapsuleCollider2D:
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4f8df680dc4ae45a1e5f741ba564fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 6.16
   jumpForce: 10
   crouchSpeed: 2
   target: {fileID: 0}
@@ -218,6 +218,8 @@ MonoBehaviour:
   wallBounceForceX: 8
   wallBounceForceY: 14
   wallBounceLockTime: 1
+  stres: 0
+  tauntDuration: 1
 --- !u!70 &300875361348389329
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -268,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  healthSlider: {fileID: 0}
 --- !u!1 &9162070647028913809
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,7 +53,7 @@ public class bossMovement : MonoBehaviour
 
     void FollowPlayer()
     {
-        Vector2 direction = (player.position - transform.position).normalized;
+        Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
         rb.linearVelocity = direction * moveSpeed;
     }
 
@@ -73,8 +73,10 @@ public class bossMovement : MonoBehaviour
         {
             if (!isAttacking && Vector2.Distance(transform.position, player.position) <= attackRange)
             {
+                isAttacking = true;
                 AttackPattern nextPattern = ChooseRandomPattern();
                 yield return ExecutePattern(nextPattern);
+                isAttacking = false;
             }
 
             yield return new WaitForSeconds(patternDelay);
@@ -90,8 +92,6 @@ public class bossMovement : MonoBehaviour
 
     IEnumerator ExecutePattern(AttackPattern pattern)
     {
-        isAttacking = true;
-
         switch (pattern)
         {
             case AttackPattern.JumpOnPlayer:
@@ -106,16 +106,13 @@ public class bossMovement : MonoBehaviour
                 yield return StartCoroutine(SlimeProjectileAttack());
                 break;
         }
-
-        isAttacking = false;
     }
 
     IEnumerator JumpOnPlayer()
     {
         Debug.Log("Jump Attack Started");
-      //  animator.SetTrigger("Jump");
 
-        Vector2 jumpDir = (player.position - transform.position).normalized;
+        Vector2 jumpDir = new Vector2(player.position.x - transform.position.x, 0).normalized;
         float jumpForce = 15f;
         float jumpDuration = 0.4f;
 
@@ -136,15 +133,18 @@ public class bossMovement : MonoBehaviour
     IEnumerator StretchArm()
     {
         Debug.Log("Stretch Arm Attack Started");
-       // animator.SetTrigger("Stretch");
         yield return new WaitForSeconds(0.2f);
 
         if (stretchArmPrefab != null)
         {
-            Vector2 dir = (player.position - transform.position).normalized;
-            GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, Quaternion.identity);
-            arm.GetComponent<Rigidbody2D>().linearVelocity = dir * 8f;
-            Destroy(arm, 4f); // 4 saniye sonra yok olsun
+            float direction = transform.localScale.x > 0 ? 1f : -1f;
+            Quaternion rotation = direction == 1f ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+
+            GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, rotation);
+            arm.transform.parent = transform;
+
+            yield return new WaitForSeconds(2f);
+            Destroy(arm);
         }
 
         yield return new WaitForSeconds(1f);
@@ -154,30 +154,42 @@ public class bossMovement : MonoBehaviour
     IEnumerator SlimeProjectileAttack()
     {
         Debug.Log("Slime Projectile Attack Started");
-       // animator.SetTrigger("SlimeShoot");
         yield return new WaitForSeconds(0.2f);
 
         Vector2 dir = (player.position - transform.position).normalized;
+        int randomIndex = Random.Range(0, 3); // 0: low, 1: mid, 2: high
 
-        if (lowProjectilePrefab != null)
+        switch (randomIndex)
         {
-            GameObject low = Instantiate(lowProjectilePrefab, lowProjectileSpawnPoint.position, Quaternion.identity);
-            low.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
-            Destroy(low, 4f);
-        }
+            case 0:
+                if (lowProjectilePrefab != null)
+                {
+                    GameObject low = Instantiate(lowProjectilePrefab, lowProjectileSpawnPoint.position, Quaternion.identity);
+                    Rigidbody2D rbLow = low.GetComponent<Rigidbody2D>();
+                    if (rbLow != null) rbLow.linearVelocity = dir * 5f;
+                    Destroy(low, 4f);
+                }
+                break;
 
-        if (midProjectilePrefab != null)
-        {
-            GameObject mid = Instantiate(midProjectilePrefab, midProjectileSpawnPoint.position, Quaternion.identity);
-            mid.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
-            Destroy(mid, 4f);
-        }
+            case 1:
+                if (midProjectilePrefab != null)
+                {
+                    GameObject mid = Instantiate(midProjectilePrefab, midProjectileSpawnPoint.position, Quaternion.identity);
+                    Rigidbody2D rbMid = mid.GetComponent<Rigidbody2D>();
+                    if (rbMid != null) rbMid.linearVelocity = dir * 6f;
+                    Destroy(mid, 4f);
+                }
+                break;
 
-        if (highProjectilePrefab != null)
-        {
-            GameObject high = Instantiate(highProjectilePrefab, highProjectileSpawnPoint.position, Quaternion.identity);
-            high.GetComponent<Rigidbody2D>().linearVelocity = dir * 7f;
-            Destroy(high, 4f);
+            case 2:
+                if (highProjectilePrefab != null)
+                {
+                    GameObject high = Instantiate(highProjectilePrefab, highProjectileSpawnPoint.position, Quaternion.identity);
+                    Rigidbody2D rbHigh = high.GetComponent<Rigidbody2D>();
+                    if (rbHigh != null) rbHigh.linearVelocity = dir * 7f;
+                    Destroy(high, 4f);
+                }
+                break;
         }
 
         yield return new WaitForSeconds(1.2f);
