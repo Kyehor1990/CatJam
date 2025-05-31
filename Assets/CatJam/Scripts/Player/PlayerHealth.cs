@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float maxHealth = 1;
-    private float currentHealth;
+    public int maxHealth = 100;
+    private int currentHealth;
 
     [SerializeField] Slider healthSlider;
 
@@ -26,11 +26,11 @@ void Update()
 {
     if (Input.GetKeyDown(KeyCode.H))
     {
-        TakeDamage(0.1f);
+        TakeDamage(10);
     }
 }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         /*if (playerMovement != null && playerMovement.IsDodging())
         {
@@ -45,9 +45,11 @@ void Update()
         {
             Die();
         }*/
-
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        GetComponent<PlayerEmote>()?.InterruptEmote();
+
         UpdateHealthBar();
 
         if (currentHealth <= 0)
