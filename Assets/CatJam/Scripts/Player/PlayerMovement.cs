@@ -27,10 +27,6 @@ public class PlayerMovement : MonoBehaviour
     public float wallBounceForceY = 16f;
     public float wallBounceLockTime = 0.2f;
 
-    [Header("Taunt Ayarları")]
-    public int stres;
-    [SerializeField] float tauntDuration = 1f;
-
     private Rigidbody2D rb;
     private bool isGrounded;
     private float moveInput;

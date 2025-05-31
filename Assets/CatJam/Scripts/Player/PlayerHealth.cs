@@ -45,9 +45,11 @@ void Update()
         {
             Die();
         }*/
-
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        GetComponent<PlayerEmote>()?.InterruptEmote();
+
         UpdateHealthBar();
 
         if (currentHealth <= 0)
