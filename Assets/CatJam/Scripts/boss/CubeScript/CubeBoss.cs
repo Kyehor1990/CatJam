@@ -91,8 +91,6 @@ public class CubeBoss : MonoBehaviour
 
 case 2:
     GameObject spike = Instantiate(spikePrefab, spikeSpawnPoint.position, Quaternion.identity);
-
-    // Spike'ı oyuncuya döndür
     if (player.position.x < transform.position.x)
     {
         spike.transform.localScale = new Vector3(-1, 1, 1); // sola bakacaksa yansı
