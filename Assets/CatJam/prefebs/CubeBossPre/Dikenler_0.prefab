@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 6539552264397929628}
   - component: {fileID: 6700917450401040646}
   - component: {fileID: -7734905469720949231}
-  - component: {fileID: 5045090147936345178}
-  - component: {fileID: 4154211578467832122}
+  - component: {fileID: 8012151150274719302}
+  - component: {fileID: 106684899848882707}
+  - component: {fileID: 2669086143458348777}
   m_Layer: 0
   m_Name: Dikenler_0
   m_TagString: Untagged
@@ -159,7 +160,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3, y: 0.4375}
   m_EdgeRadius: 0
---- !u!114 &5045090147936345178
+--- !u!114 &8012151150274719302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,12 +169,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5008890343071206149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247291beadea84d935679a68d66910, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d9a3b2cc069e364ca54c64a2e0c6c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 1.5
-  damage: 1
---- !u!50 &4154211578467832122
+  riseDistance: 1
+  riseDuration: 0.4
+  stayDuration: 1
+  fallDuration: 0.3
+--- !u!50 &106684899848882707
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -181,14 +184,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5008890343071206149}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -199,4 +202,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
+--- !u!114 &2669086143458348777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008890343071206149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2ef71f81d3aa6469ea31459922f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10

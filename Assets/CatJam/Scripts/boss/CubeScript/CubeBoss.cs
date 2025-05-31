@@ -38,10 +38,6 @@ public class CubeBoss : MonoBehaviour
 
             transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            PerformAttack();
-        }
 
         if (isAttacking) return;
 
@@ -57,8 +53,6 @@ public class CubeBoss : MonoBehaviour
     {
         attackType = Random.Range(0, 3); // 0: Lazer, 1: Mermi, 2: Diken
         isAttacking = true;
-
-        attackType = 2;
 
         // Saldırı türüne göre animasyon tetikleyelim
         switch (attackType)
@@ -91,14 +85,13 @@ public class CubeBoss : MonoBehaviour
 
 case 2:
     GameObject spike = Instantiate(spikePrefab, spikeSpawnPoint.position, Quaternion.identity);
-    if (player.position.x < transform.position.x)
-    {
-        spike.transform.localScale = new Vector3(-1, 1, 1); // sola bakacaksa yansı
-    }
-    else
-    {
-        spike.transform.localScale = new Vector3(1, 1, 1); // sağa bakacaksa düz
-    }
+    Vector3 scale = spike.transform.localScale;
+    if (player.position.x > transform.position.x)
+{
+    scale.x *= -1;
+}
+
+spike.transform.localScale = scale;
     break;
         }
 
