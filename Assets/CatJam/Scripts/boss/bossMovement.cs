@@ -16,19 +16,31 @@ public class bossMovement : MonoBehaviour
     public float patternDelay = 2f;
 
     public GameObject stretchArmPrefab;
-    public GameObject slimeProjectilePrefab;
+    public GameObject lowProjectilePrefab;
+    public GameObject midProjectilePrefab;
+    public GameObject highProjectilePrefab;
+
+    public Transform lowProjectileSpawnPoint;
+    public Transform midProjectileSpawnPoint;
+    public Transform highProjectileSpawnPoint;
 
     private bool isAttacking = false;
     private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(PatternLoop());
     }
 
     void Update()
     {
+        FlipTowardsPlayer();
+
         if (!isAttacking && Vector2.Distance(transform.position, player.position) > attackRange)
         {
             FollowPlayer();
@@ -43,6 +55,16 @@ public class bossMovement : MonoBehaviour
     {
         Vector2 direction = (player.position - transform.position).normalized;
         rb.linearVelocity = direction * moveSpeed;
+    }
+
+    void FlipTowardsPlayer()
+    {
+        if (player != null)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = player.position.x > transform.position.x ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }
     }
 
     IEnumerator PatternLoop()
@@ -91,6 +113,7 @@ public class bossMovement : MonoBehaviour
     IEnumerator JumpOnPlayer()
     {
         Debug.Log("Jump Attack Started");
+      //  animator.SetTrigger("Jump");
 
         Vector2 jumpDir = (player.position - transform.position).normalized;
         float jumpForce = 15f;
@@ -113,12 +136,15 @@ public class bossMovement : MonoBehaviour
     IEnumerator StretchArm()
     {
         Debug.Log("Stretch Arm Attack Started");
+       // animator.SetTrigger("Stretch");
+        yield return new WaitForSeconds(0.2f);
 
         if (stretchArmPrefab != null)
         {
             Vector2 dir = (player.position - transform.position).normalized;
-            GameObject arm = Instantiate(stretchArmPrefab, transform.position, Quaternion.identity);
+            GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, Quaternion.identity);
             arm.GetComponent<Rigidbody2D>().linearVelocity = dir * 8f;
+            Destroy(arm, 4f); // 4 saniye sonra yok olsun
         }
 
         yield return new WaitForSeconds(1f);
@@ -128,12 +154,30 @@ public class bossMovement : MonoBehaviour
     IEnumerator SlimeProjectileAttack()
     {
         Debug.Log("Slime Projectile Attack Started");
+       // animator.SetTrigger("SlimeShoot");
+        yield return new WaitForSeconds(0.2f);
 
-        if (slimeProjectilePrefab != null)
+        Vector2 dir = (player.position - transform.position).normalized;
+
+        if (lowProjectilePrefab != null)
         {
-            Vector2 dir = (player.position - transform.position).normalized;
-            GameObject proj = Instantiate(slimeProjectilePrefab, transform.position, Quaternion.identity);
-            proj.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
+            GameObject low = Instantiate(lowProjectilePrefab, lowProjectileSpawnPoint.position, Quaternion.identity);
+            low.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
+            Destroy(low, 4f);
+        }
+
+        if (midProjectilePrefab != null)
+        {
+            GameObject mid = Instantiate(midProjectilePrefab, midProjectileSpawnPoint.position, Quaternion.identity);
+            mid.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
+            Destroy(mid, 4f);
+        }
+
+        if (highProjectilePrefab != null)
+        {
+            GameObject high = Instantiate(highProjectilePrefab, highProjectileSpawnPoint.position, Quaternion.identity);
+            high.GetComponent<Rigidbody2D>().linearVelocity = dir * 7f;
+            Destroy(high, 4f);
         }
 
         yield return new WaitForSeconds(1.2f);

@@ -181,6 +181,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6304350836179864975, guid: 4e1b407940958b8478c9d6435c70adad, type: 3}
   m_PrefabInstance: {fileID: 197747250}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1129622751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1129622752}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1129622752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129622751}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0.103, z: 0}
+  m_LocalScale: {x: 0.44682756, y: 0.44682756, z: 0.44682756}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1260184012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260184008
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +294,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1260184011
 SpriteRenderer:
@@ -329,11 +360,13 @@ Transform:
   m_GameObject: {fileID: 1260184008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.86, y: -1.64, z: 0}
-  m_LocalScale: {x: 2.238, y: 2.238, z: 2.238}
+  m_LocalPosition: {x: 3.4665, y: -0.8529, z: 0}
+  m_LocalScale: {x: 3.0251043, y: 3.0251043, z: 3.0251043}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1347757262}
+  - {fileID: 1281006360}
+  - {fileID: 1129622752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1260184013
@@ -353,7 +386,43 @@ MonoBehaviour:
   attackRange: 5
   patternDelay: 2
   stretchArmPrefab: {fileID: 7535802178773789195, guid: 5e69df21b83e6ee47978edbc148b2806, type: 3}
-  slimeProjectilePrefab: {fileID: 4392312708833734708, guid: fc5069ba99053974ca21d1bd5d71b6c3, type: 3}
+  lowProjectilePrefab: {fileID: 7535802178773789195, guid: 5e69df21b83e6ee47978edbc148b2806, type: 3}
+  midProjectilePrefab: {fileID: 7535802178773789195, guid: 5e69df21b83e6ee47978edbc148b2806, type: 3}
+  highProjectilePrefab: {fileID: 4392312708833734708, guid: fc5069ba99053974ca21d1bd5d71b6c3, type: 3}
+  lowProjectileSpawnPoint: {fileID: 1347757262}
+  midProjectileSpawnPoint: {fileID: 1129622752}
+  highProjectileSpawnPoint: {fileID: 1281006360}
+--- !u!1 &1281006359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281006360}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281006360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281006359}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.658, z: 0}
+  m_LocalScale: {x: 0.44682756, y: 0.44682756, z: 0.44682756}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1260184012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347757261
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,8 +673,8 @@ Transform:
   m_GameObject: {fileID: 1674078918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1356, y: -4.44, z: 0}
-  m_LocalScale: {x: 23.549467, y: 1, z: 1}
+  m_LocalPosition: {x: 0.6952, y: -4.44, z: 0}
+  m_LocalScale: {x: 25.339226, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
