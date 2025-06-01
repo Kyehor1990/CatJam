@@ -6,6 +6,7 @@ public class StretchHitbox : MonoBehaviour
     public float stretchDuration = 0.5f;
     public float maxLength = 5f;
     public float stayDuration = 1.5f;
+    [SerializeField] int damage = 10;
 
     private Vector3 initialScale;
     private Vector3 targetScale;
@@ -38,10 +39,15 @@ public class StretchHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player hit by arm!");
-            // Buraya hasar verme kodunu ekleyebilirsin.
+            Debug.Log("Player hit by StretchHitbox");
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+                playerHealth.AttackStress(5); // Assuming 5 stress for this hit
+            }
         }
     }
 }

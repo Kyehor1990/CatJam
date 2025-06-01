@@ -14,7 +14,9 @@ public class BossMovement : MonoBehaviour
     public Transform player;
     public float moveSpeed = 2f;
     public float attackRange = 5f;
-    public float patternDelay = 2f;
+
+    [Header("Cooldown")]
+    public float attackCooldown = 3f;
 
     [Header("Prefabs")]
     public GameObject stretchArmPrefab;
@@ -30,30 +32,38 @@ public class BossMovement : MonoBehaviour
     [SerializeField] private float projectileDestroyTime = 3f;
 
     private bool isAttacking = false;
+    private bool isCooldown = false;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private float pushValue = 5f; // Adjust the push value as needed
+    [SerializeField] private float pushValue = 5f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        StartCoroutine(PatternLoop());
     }
 
     void Update()
     {
-        if (!isAttacking && Vector2.Distance(transform.position, player.position) > attackRange)
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            ExecutePattern(AttackPattern.StretchArm);
+        }
+
+        if (!isAttacking && !isCooldown && Vector2.Distance(transform.position, player.position) <= attackRange)
+        {
+            isAttacking = true;
+            AttackPattern pattern = ChooseRandomPattern();
+            ExecutePattern(pattern);
+        }
+
+        if (!isAttacking)
         {
             FollowPlayer();
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
         }
 
         FlipTowardsPlayer();
@@ -62,7 +72,7 @@ public class BossMovement : MonoBehaviour
     void FollowPlayer()
     {
         Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
-        rb.velocity = direction * moveSpeed;
+        rb.linearVelocity = direction * moveSpeed;
     }
 
     void FlipTowardsPlayer()
@@ -70,24 +80,8 @@ public class BossMovement : MonoBehaviour
         if (player != null)
         {
             Vector3 scale = transform.localScale;
-            scale.x = player.position.x > transform.position.x ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+            scale.x = player.position.x < transform.position.x ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
             transform.localScale = scale;
-        }
-    }
-
-    IEnumerator PatternLoop()
-    {
-        while (true)
-        {
-            if (!isAttacking && Vector2.Distance(transform.position, player.position) <= attackRange)
-            {
-                isAttacking = true;
-                AttackPattern pattern = ChooseRandomPattern();
-                yield return ExecutePattern(pattern);
-                isAttacking = false;
-            }
-
-            yield return new WaitForSeconds(patternDelay);
         }
     }
 
@@ -97,57 +91,40 @@ public class BossMovement : MonoBehaviour
         return (AttackPattern)Random.Range(0, count);
     }
 
-    IEnumerator ExecutePattern(AttackPattern pattern)
+    void ExecutePattern(AttackPattern pattern)
     {
         switch (pattern)
         {
             case AttackPattern.JumpOnPlayer:
-                yield return JumpOnPlayer();
+                animator.SetTrigger("JumpAttack");
                 break;
             case AttackPattern.StretchArm:
-                yield return StretchArm();
+                animator.SetTrigger("StretchArm");
                 break;
             case AttackPattern.SlimeProjectile:
-                yield return SlimeProjectileAttack();
+                animator.SetTrigger("ProjectileAttack");
                 break;
         }
     }
 
-    IEnumerator JumpOnPlayer()
-    {
-        Debug.Log("Jump Attack Started");
+    // --- Animasyon event fonksiyonları ---
+    // Animasyon event'leri bu fonksiyonları çağıracak!
 
+    public void DoJumpAttack()
+    {
+        Debug.Log("Jump Attack Executed");
         Vector2 jumpDir = new Vector2(player.position.x - transform.position.x, 0).normalized;
         float jumpForceX = 8f;
         float jumpHeight = 4f;
         float gravity = Mathf.Abs(Physics2D.gravity.y);
         float jumpForceY = Mathf.Sqrt(2 * jumpHeight * gravity);
 
-        rb.velocity = new Vector2(jumpDir.x * jumpForceX, jumpForceY);
-
-        yield return new WaitForSeconds(0.8f);
-        float timeout = 2f;
-        float timer = 0f;
-
-        while (!IsGrounded() && timer < timeout)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        Debug.Log("Jump Attack Ended");
+        rb.linearVelocity = new Vector2(jumpDir.x * jumpForceX, jumpForceY);
     }
 
-    bool IsGrounded()
+    public void DoStretchArm()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.down * 0.1f, Vector2.down, 0.2f, LayerMask.GetMask("Ground"));
-        return hit.collider != null;
-    }
-
-    IEnumerator StretchArm()
-    {
-        Debug.Log("Stretch Arm Attack Started");
-        yield return new WaitForSeconds(0.2f);
+        Debug.Log("Stretch Arm Executed");
 
         if (stretchArmPrefab != null && midProjectileSpawnPoint != null)
         {
@@ -157,19 +134,23 @@ public class BossMovement : MonoBehaviour
             GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, rotation);
             arm.transform.parent = transform;
 
-            yield return new WaitForSeconds(2f);
-            Destroy(arm);
+            // 2 saniye sonra yok et (Invoke ile)
+            Invoke(nameof(DestroyStretchArm), 2f);
         }
-
-        yield return new WaitForSeconds(1f);
-        Debug.Log("Stretch Arm Attack Ended");
     }
 
-    IEnumerator SlimeProjectileAttack()
+    void DestroyStretchArm()
     {
-        Debug.Log("Slime Projectile Attack Started");
-        yield return new WaitForSeconds(0.2f);
+        Transform arm = transform.Find(stretchArmPrefab.name + "(Clone)");
+        if (arm != null)
+        {
+            Destroy(arm.gameObject);
+        }
+    }
 
+    public void DoProjectileAttack()
+    {
+        Debug.Log("Slime Projectile Executed");
         Vector2 dir = (player.position - transform.position).normalized;
         int randomIndex = Random.Range(0, 3);
 
@@ -202,13 +183,31 @@ public class BossMovement : MonoBehaviour
             Rigidbody2D projRb = instance.GetComponent<Rigidbody2D>();
             if (projRb != null)
             {
-                projRb.velocity = dir * speed;
+                projRb.linearVelocity = dir * speed;
             }
             Destroy(instance, projectileDestroyTime);
         }
+    }
 
-        yield return new WaitForSeconds(1.2f);
-        Debug.Log("Slime Projectile Attack Ended");
+    // Animasyon sonunda çağrılacak event ile saldırı bitti ve cooldown başlıyor
+    public void OnAttackEnd()
+    {
+        Debug.Log("Attack ended, cooldown started");
+        isAttacking = false;
+        isCooldown = true;
+        Invoke(nameof(ResetCooldown), attackCooldown);
+    }
+
+    void ResetCooldown()
+    {
+        isCooldown = false;
+        Debug.Log("Cooldown ended");
+    }
+
+    bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.down * 0.1f, Vector2.down, 0.2f, LayerMask.GetMask("Ground"));
+        return hit.collider != null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -219,7 +218,7 @@ public class BossMovement : MonoBehaviour
             if (playerRb != null)
             {
                 Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
-                float knockbackForce = pushValue * 2f; // Adjust the knockback force as needed
+                float knockbackForce = pushValue * 2f;
                 playerRb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
             }
         }

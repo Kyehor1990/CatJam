@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6899221754267619136}
   - component: {fileID: 6782878711655751689}
   m_Layer: 0
-  m_Name: slimeArm
+  m_Name: slimeArm 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2508126832090080162, guid: 1258fa30be1e96346937c77544d2001c, type: 3}
+  m_Sprite: {fileID: -6492335174548567758, guid: fbaf59b9ccc20fe4fa58906549926997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,17 +152,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.018379092}
+  m_Offset: {x: -0.2218891, y: 0.018379092}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.21000001, y: 0.100456245}
+    oldSize: {x: 2, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.4906404}
+  m_Size: {x: 1.4437778, y: 0.4906404}
   m_EdgeRadius: 0
 --- !u!114 &6899221754267619136
 MonoBehaviour:
@@ -179,8 +179,6 @@ MonoBehaviour:
   stretchDuration: 0.5
   maxLength: 5
   stayDuration: 1.5
-  damage: 10
-  playerHealth: {fileID: 0}
 --- !u!95 &6782878711655751689
 Animator:
   serializedVersion: 7

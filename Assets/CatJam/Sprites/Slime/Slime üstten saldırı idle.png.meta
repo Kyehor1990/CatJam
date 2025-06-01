@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: d1fd57fe7f353e24993a87bbca5c57b5
+guid: dca4db1e8517fcf4a82e538ebcd59b04
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4417518033076192240
-    second: Slime idle 137x64_0
+      213: -6684086311403053366
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_0"
   - first:
-      213: -2563933573691574299
-    second: Slime idle 137x64_1
+      213: 5965433469562407062
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_1"
   - first:
-      213: -3541874329833359798
-    second: Slime idle 137x64_2
+      213: 3284139139199289823
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_2"
   - first:
-      213: -6567914425827685683
-    second: Slime idle 137x64_3
+      213: 9086520135116657323
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_3"
   - first:
-      213: 8004604851382921543
-    second: Slime idle 137x64_4
+      213: -455450719536402356
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_4"
   - first:
-      213: -5586706425267222342
-    second: Slime idle 137x64_5
+      213: -1644021425006805063
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_5"
   - first:
-      213: -4885406958556420928
-    second: Slime idle 137x64_6
+      213: -7815774934178372080
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_6"
   - first:
-      213: 8985815960489903648
-    second: Slime idle 137x64_7
+      213: 1327088552769801461
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_7"
   - first:
-      213: 7486470630786001929
-    second: Slime idle 137x64_8
+      213: -7558611104841228826
+    second: "Slime \xFCstten sald\u0131r\u0131 idle_8"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slime idle 137x64_0
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_0"
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3
-        width: 62
-        height: 48
+        x: 0
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01c7c9101c2d1b2c0800000000000000
-      internalID: -4417518033076192240
+      spriteID: ace15c0e9ea5d33a0800000000000000
+      internalID: -6684086311403053366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_1
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_1"
       rect:
         serializedVersion: 2
-        x: 138
-        y: 3
-        width: 62
-        height: 45
+        x: 128
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e77a60cff31b6cd0800000000000000
-      internalID: -2563933573691574299
+      spriteID: 6984e74622a79c250800000000000000
+      internalID: 5965433469562407062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_2
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_2"
       rect:
         serializedVersion: 2
-        x: 275
-        y: 3
-        width: 62
-        height: 45
+        x: 256
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a46353b001cb8dec0800000000000000
-      internalID: -3541874329833359798
+      spriteID: fd94ee0a52b939d20800000000000000
+      internalID: 3284139139199289823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_3
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_3"
       rect:
         serializedVersion: 2
-        x: 412
-        y: 3
-        width: 62
-        height: 41
+        x: 384
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dca8065c0a41ad4a0800000000000000
-      internalID: -6567914425827685683
+      spriteID: ba21012abedc91e70800000000000000
+      internalID: 9086520135116657323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_4
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_4"
       rect:
         serializedVersion: 2
-        x: 549
-        y: 3
-        width: 62
-        height: 34
+        x: 512
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7492c0eb3b1161f60800000000000000
-      internalID: 8004604851382921543
+      spriteID: c403651dbf9eda9f0800000000000000
+      internalID: -455450719536402356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_5
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_5"
       rect:
         serializedVersion: 2
-        x: 686
-        y: 3
-        width: 62
-        height: 34
+        x: 640
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab80e891b180872b0800000000000000
-      internalID: -5586706425267222342
+      spriteID: 9bf765f69334f29e0800000000000000
+      internalID: -1644021425006805063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_6
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_6"
       rect:
         serializedVersion: 2
-        x: 823
-        y: 3
-        width: 62
-        height: 41
+        x: 768
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c4e504514c833cb0800000000000000
-      internalID: -4885406958556420928
+      spriteID: 01665eb6b1ac88390800000000000000
+      internalID: -7815774934178372080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_7
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_7"
       rect:
         serializedVersion: 2
-        x: 960
-        y: 3
-        width: 62
-        height: 45
+        x: 896
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0264906d10804bc70800000000000000
-      internalID: 8985815960489903648
+      spriteID: 5fcc45de104ca6210800000000000000
+      internalID: 1327088552769801461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime idle 137x64_8
+      name: "Slime \xFCstten sald\u0131r\u0131 idle_8"
       rect:
         serializedVersion: 2
-        x: 1097
-        y: 3
-        width: 62
-        height: 48
+        x: 1024
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,8 +315,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90ce469af5945e760800000000000000
-      internalID: 7486470630786001929
+      spriteID: 6ed9d945f3b6a1790800000000000000
+      internalID: -7558611104841228826
       vertices: []
       indices: 
       edges: []
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1a9a8306c37b0c048aec90ba3ffc67df
     internalID: 0
     vertices: []
     indices: 
@@ -333,17 +333,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Slime idle 137x64_0: -4417518033076192240
-      Slime idle 137x64_1: -2563933573691574299
-      Slime idle 137x64_2: -3541874329833359798
-      Slime idle 137x64_3: -6567914425827685683
-      Slime idle 137x64_4: 8004604851382921543
-      Slime idle 137x64_5: -5586706425267222342
-      Slime idle 137x64_6: -4885406958556420928
-      Slime idle 137x64_7: 8985815960489903648
-      Slime idle 137x64_8: 7486470630786001929
+      "Slime \xFCstten sald\u0131r\u0131 idle_0": -6684086311403053366
+      "Slime \xFCstten sald\u0131r\u0131 idle_1": 5965433469562407062
+      "Slime \xFCstten sald\u0131r\u0131 idle_2": 3284139139199289823
+      "Slime \xFCstten sald\u0131r\u0131 idle_3": 9086520135116657323
+      "Slime \xFCstten sald\u0131r\u0131 idle_4": -455450719536402356
+      "Slime \xFCstten sald\u0131r\u0131 idle_5": -1644021425006805063
+      "Slime \xFCstten sald\u0131r\u0131 idle_6": -7815774934178372080
+      "Slime \xFCstten sald\u0131r\u0131 idle_7": 1327088552769801461
+      "Slime \xFCstten sald\u0131r\u0131 idle_8": -7558611104841228826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

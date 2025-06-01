@@ -97,7 +97,8 @@ public class PlayerEmote : MonoBehaviour
             stress += currentEmoteStress;
             if (stress >= maxStress)
             {
-                cubeBoss.Die();
+                if(cubeBoss != null)
+                    cubeBoss.Die();
             }
 
             Debug.Log($"Emote tamamlandı! Toplam stres: {stress}");
