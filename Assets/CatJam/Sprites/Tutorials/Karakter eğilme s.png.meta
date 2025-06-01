@@ -1,40 +1,25 @@
 fileFormatVersion: 2
-guid: 290dff4ed7b89be4e980147a86c2d76b
+guid: e3c885c5b3241474d876233fabe94107
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6345665627051270845
-    second: "Tuto space z\u0131plama_0"
+      213: -183014327339330030
+    second: "Karakter e\u011Filme s_0"
   - first:
-      213: -2058876199212630694
-    second: "Tuto space z\u0131plama_1"
+      213: 4219004098577458798
+    second: "Karakter e\u011Filme s_1"
   - first:
-      213: -5979534284227877704
-    second: "Tuto space z\u0131plama_2"
+      213: -7964018912958836468
+    second: "Karakter e\u011Filme s_2"
   - first:
-      213: 2085726635404984347
-    second: "Tuto space z\u0131plama_3"
+      213: -5964029311811681122
+    second: "Karakter e\u011Filme s_3"
   - first:
-      213: -1174674642754872297
-    second: "Tuto space z\u0131plama_4"
+      213: -6769007561122848656
+    second: "Karakter e\u011Filme s_4"
   - first:
-      213: -3570118291102454488
-    second: "Tuto space z\u0131plama_5"
-  - first:
-      213: 5872426564132636044
-    second: "Tuto space z\u0131plama_6"
-  - first:
-      213: -4388579408173130756
-    second: "Tuto space z\u0131plama_7"
-  - first:
-      213: -4645661568891405972
-    second: "Tuto space z\u0131plama_8"
-  - first:
-      213: 6574159809388921824
-    second: "Tuto space z\u0131plama_9"
-  - first:
-      213: 2238975436484549658
-    second: "Tuto space z\u0131plama_10"
+      213: 3563760021792871935
+    second: "Karakter e\u011Filme s_5"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -130,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Tuto space z\u0131plama_0"
+      name: "Karakter e\u011Filme s_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -145,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34dd334abbaafe7a0800000000000000
-      internalID: -6345665627051270845
+      spriteID: 216d12e507dc57df0800000000000000
+      internalID: -183014327339330030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Tuto space z\u0131plama_1"
+      name: "Karakter e\u011Filme s_1"
       rect:
         serializedVersion: 2
         x: 48
@@ -167,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5dbc6551076d63e0800000000000000
-      internalID: -2058876199212630694
+      spriteID: e6660a9dfd9ec8a30800000000000000
+      internalID: 4219004098577458798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Tuto space z\u0131plama_2"
+      name: "Karakter e\u011Filme s_2"
       rect:
         serializedVersion: 2
         x: 96
@@ -189,74 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b4e35adf3d640da0800000000000000
-      internalID: -5979534284227877704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto space z\u0131plama_3"
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b1082e1035df1fc10800000000000000
-      internalID: 2085726635404984347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto space z\u0131plama_4"
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71cdfe7d2a7b2bfe0800000000000000
-      internalID: -1174674642754872297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto space z\u0131plama_5"
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82da6bc5454647ec0800000000000000
-      internalID: -3570118291102454488
+      spriteID: c01989c6efe1a7190800000000000000
+      internalID: -7964018912958836468
       vertices: []
       indices: 
       edges: []
@@ -265,7 +184,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 417f279e67f76b246bfd7bbd6c1ffbc1
+    spriteID: 0ac3242b3d3c6644fa99b1994a51f2e6
     internalID: 0
     vertices: []
     indices: 
@@ -275,14 +194,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "Tuto space z\u0131plama_0": -6345665627051270845
-      "Tuto space z\u0131plama_1": -2058876199212630694
-      "Tuto space z\u0131plama_2": -5979534284227877704
-      "Tuto space z\u0131plama_3": 2085726635404984347
-      "Tuto space z\u0131plama_4": -1174674642754872297
-      "Tuto space z\u0131plama_5": -3570118291102454488
+      "Karakter e\u011Filme s_0": -183014327339330030
+      "Karakter e\u011Filme s_1": 4219004098577458798
+      "Karakter e\u011Filme s_2": -7964018912958836468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

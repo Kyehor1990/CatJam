@@ -1,0 +1,644 @@
+fileFormatVersion: 2
+guid: dc4833d5f4e29b04c8ad8b890f6cb3ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6926127998204691475
+    second: Tuto Taunt atmaJKL_0
+  - first:
+      213: 6474587230769677222
+    second: Tuto Taunt atmaJKL_1
+  - first:
+      213: 6435492590987756858
+    second: Tuto Taunt atmaJKL_2
+  - first:
+      213: -1548933962506054611
+    second: Tuto Taunt atmaJKL_3
+  - first:
+      213: -6326485706064984810
+    second: Tuto Taunt atmaJKL_4
+  - first:
+      213: -6174895483289750170
+    second: Tuto Taunt atmaJKL_5
+  - first:
+      213: -8494903089642730752
+    second: Tuto Taunt atmaJKL_6
+  - first:
+      213: -8090225414347325665
+    second: Tuto Taunt atmaJKL_7
+  - first:
+      213: -5626799048882719318
+    second: Tuto Taunt atmaJKL_8
+  - first:
+      213: -1941628677191049733
+    second: Tuto Taunt atmaJKL_9
+  - first:
+      213: 1302767490060568323
+    second: Tuto Taunt atmaJKL_10
+  - first:
+      213: 3285334260132617107
+    second: Tuto Taunt atmaJKL_11
+  - first:
+      213: -910020410380424771
+    second: Tuto Taunt atmaJKL_12
+  - first:
+      213: -2075089050652623869
+    second: Tuto Taunt atmaJKL_13
+  - first:
+      213: -2585252638517554037
+    second: Tuto Taunt atmaJKL_14
+  - first:
+      213: -4747740452483464288
+    second: Tuto Taunt atmaJKL_15
+  - first:
+      213: -5074598911815558771
+    second: Tuto Taunt atmaJKL_16
+  - first:
+      213: -2415076606066050653
+    second: Tuto Taunt atmaJKL_17
+  - first:
+      213: 5386550023961938859
+    second: Tuto Taunt atmaJKL_18
+  - first:
+      213: -7232765017733264072
+    second: Tuto Taunt atmaJKL_19
+  - first:
+      213: -76823017204528362
+    second: Tuto Taunt atmaJKL_20
+  - first:
+      213: 2014136583340267404
+    second: Tuto Taunt atmaJKL_21
+  - first:
+      213: 6721671067358401461
+    second: Tuto Taunt atmaJKL_22
+  - first:
+      213: 5837189974586381903
+    second: Tuto Taunt atmaJKL_23
+  - first:
+      213: -7098772360772037982
+    second: Tuto Taunt atmaJKL_24
+  - first:
+      213: -6586221746328702580
+    second: Tuto Taunt atmaJKL_25
+  - first:
+      213: 5825865040085064580
+    second: Tuto Taunt atmaJKL_26
+  - first:
+      213: -8697133052416127137
+    second: Tuto Taunt atmaJKL_27
+  - first:
+      213: -4636131718510919357
+    second: Tuto Taunt atmaJKL_28
+  - first:
+      213: -7595120149109488195
+    second: Tuto Taunt atmaJKL_29
+  - first:
+      213: -4188952581900160243
+    second: Tuto Taunt atmaJKL_30
+  - first:
+      213: 7975098868709847767
+    second: Tuto Taunt atmaJKL_31
+  - first:
+      213: -5911039307911109988
+    second: Tuto Taunt atmaJKL_32
+  - first:
+      213: 871324094415072161
+    second: Tuto Taunt atmaJKL_33
+  - first:
+      213: -3945551225608704402
+    second: Tuto Taunt atmaJKL_34
+  - first:
+      213: 8641361493150115413
+    second: Tuto Taunt atmaJKL_35
+  - first:
+      213: -3467728348047709685
+    second: Tuto Taunt atmaJKL_36
+  - first:
+      213: 3780167196364880376
+    second: Tuto Taunt atmaJKL_37
+  - first:
+      213: -2426138703886042222
+    second: Tuto Taunt atmaJKL_38
+  - first:
+      213: -4369661712574806911
+    second: Tuto Taunt atmaJKL_39
+  - first:
+      213: -7386321750140988515
+    second: Tuto Taunt atmaJKL_40
+  - first:
+      213: 6447362358836576683
+    second: Tuto Taunt atmaJKL_41
+  - first:
+      213: -3081976465644631426
+    second: Tuto Taunt atmaJKL_42
+  - first:
+      213: 5100223660498628504
+    second: Tuto Taunt atmaJKL_43
+  - first:
+      213: -4514966899776489802
+    second: Tuto Taunt atmaJKL_44
+  - first:
+      213: 3719632371335459619
+    second: Tuto Taunt atmaJKL_45
+  - first:
+      213: 4278799719298220343
+    second: Tuto Taunt atmaJKL_46
+  - first:
+      213: 8224873557766748732
+    second: Tuto Taunt atmaJKL_47
+  - first:
+      213: 92142499148458930
+    second: Tuto Taunt atmaJKL_48
+  - first:
+      213: -268674312107441961
+    second: Tuto Taunt atmaJKL_49
+  - first:
+      213: 1322123463749188893
+    second: Tuto Taunt atmaJKL_50
+  - first:
+      213: -484145465867108579
+    second: Tuto Taunt atmaJKL_51
+  - first:
+      213: -5087753732739131578
+    second: Tuto Taunt atmaJKL_52
+  - first:
+      213: -6164173078668740992
+    second: Tuto Taunt atmaJKL_53
+  - first:
+      213: -8245263810513473741
+    second: Tuto Taunt atmaJKL_54
+  - first:
+      213: -5667556096857466889
+    second: Tuto Taunt atmaJKL_55
+  - first:
+      213: 6929718873519617369
+    second: Tuto Taunt atmaJKL_56
+  - first:
+      213: 4033583647571470559
+    second: Tuto Taunt atmaJKL_57
+  - first:
+      213: -6693356150530749116
+    second: Tuto Taunt atmaJKL_58
+  - first:
+      213: 6917980854084693639
+    second: Tuto Taunt atmaJKL_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 314c0e9d7bc8e1060800000000000000
+      internalID: 6926127998204691475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a38e4558ca5ad950800000000000000
+      internalID: 6474587230769677222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35cb703a667f4950800000000000000
+      internalID: 6435492590987756858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24d94884c4118ae0800000000000000
+      internalID: -1548933962506054611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 615096df4cec338a0800000000000000
+      internalID: -6326485706064984810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665b951264d5e4aa0800000000000000
+      internalID: -6174895483289750170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b0a7cd5aa0c1a80800000000000000
+      internalID: -8494903089642730752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f7df879deb9bf80800000000000000
+      internalID: -8090225414347325665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5f6dcb31899e1b0800000000000000
+      internalID: -5626799048882719318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfdd05a5103fd05e0800000000000000
+      internalID: -1941628677191049733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 307ccfd312c541210800000000000000
+      internalID: 1302767490060568323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b10a76a1ad79d20800000000000000
+      internalID: 3285334260132617107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db96bec1245fe53f0800000000000000
+      internalID: -910020410380424771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c3c82b08dc333e0800000000000000
+      internalID: -2075089050652623869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto Taunt atmaJKL_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84158a2c665f1cd0800000000000000
+      internalID: -2585252638517554037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 716f57ccac4d4ab4bbfca4598ee2e2d6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":15.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Tuto Taunt atmaJKL_0: 6926127998204691475
+      Tuto Taunt atmaJKL_1: 6474587230769677222
+      Tuto Taunt atmaJKL_10: 1302767490060568323
+      Tuto Taunt atmaJKL_11: 3285334260132617107
+      Tuto Taunt atmaJKL_12: -910020410380424771
+      Tuto Taunt atmaJKL_13: -2075089050652623869
+      Tuto Taunt atmaJKL_14: -2585252638517554037
+      Tuto Taunt atmaJKL_2: 6435492590987756858
+      Tuto Taunt atmaJKL_3: -1548933962506054611
+      Tuto Taunt atmaJKL_4: -6326485706064984810
+      Tuto Taunt atmaJKL_5: -6174895483289750170
+      Tuto Taunt atmaJKL_6: -8494903089642730752
+      Tuto Taunt atmaJKL_7: -8090225414347325665
+      Tuto Taunt atmaJKL_8: -5626799048882719318
+      Tuto Taunt atmaJKL_9: -1941628677191049733
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

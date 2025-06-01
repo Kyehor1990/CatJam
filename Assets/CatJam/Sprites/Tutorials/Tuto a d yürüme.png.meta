@@ -102,7 +102,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -154,10 +154,10 @@ TextureImporter:
       name: "Tuto a d y\xFCr\xFCme_0"
       rect:
         serializedVersion: 2
-        x: 4
-        y: 28
-        width: 15
-        height: 15
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: "Tuto a d y\xFCr\xFCme_1"
       rect:
         serializedVersion: 2
-        x: 29
-        y: 28
-        width: 15
-        height: 15
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: "Tuto a d y\xFCr\xFCme_2"
       rect:
         serializedVersion: 2
-        x: 52
-        y: 28
-        width: 15
-        height: 15
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +220,10 @@ TextureImporter:
       name: "Tuto a d y\xFCr\xFCme_3"
       rect:
         serializedVersion: 2
-        x: 77
-        y: 28
-        width: 15
-        height: 15
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: "Tuto a d y\xFCr\xFCme_4"
       rect:
         serializedVersion: 2
-        x: 100
-        y: 28
-        width: 15
-        height: 15
+        x: 192
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,10 +264,10 @@ TextureImporter:
       name: "Tuto a d y\xFCr\xFCme_5"
       rect:
         serializedVersion: 2
-        x: 125
-        y: 28
-        width: 15
-        height: 15
+        x: 240
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,275 +282,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_6"
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 28
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf5e68629a649e870800000000000000
-      internalID: 8712572646434727419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_7"
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 28
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 813d13b2224399a60800000000000000
-      internalID: 7681227960815309592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_8"
-      rect:
-        serializedVersion: 2
-        x: 196
-        y: 28
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7925024399b7375d0800000000000000
-      internalID: -3065971023374429545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_9"
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 28
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42965a407395d9cf0800000000000000
-      internalID: -243940711972116188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_10"
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 28
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e25b72bdc6766cd50800000000000000
-      internalID: 6757202008146949422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_11"
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 28
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce0a6070da9cf0a50800000000000000
-      internalID: 6489627333048574188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_12"
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b3ec1d88541afed0800000000000000
-      internalID: -2379567082554727503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_13"
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89e1bf95752f9a400800000000000000
-      internalID: 336066104201518744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_14"
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 0
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 90d23797746912390800000000000000
-      internalID: -7844823842178257655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_15"
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 0
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71eb9c6e6e99a9570800000000000000
-      internalID: 8474254865844518423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_16"
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 0
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b9c830ec3c0b3560800000000000000
-      internalID: 7294437477056039345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Tuto a d y\xFCr\xFCme_17"
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 0
-        width: 17
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b764d2cac065d7170800000000000000
-      internalID: 8177787110802933371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b5b60e119bed4d64ab4ece32bd55939a
     internalID: 0
     vertices: []
     indices: 
@@ -558,26 +294,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       "Tuto a d y\xFCr\xFCme_0": -1736098089799369849
       "Tuto a d y\xFCr\xFCme_1": 1977940640560348716
-      "Tuto a d y\xFCr\xFCme_10": 6757202008146949422
-      "Tuto a d y\xFCr\xFCme_11": 6489627333048574188
-      "Tuto a d y\xFCr\xFCme_12": -2379567082554727503
-      "Tuto a d y\xFCr\xFCme_13": 336066104201518744
-      "Tuto a d y\xFCr\xFCme_14": -7844823842178257655
-      "Tuto a d y\xFCr\xFCme_15": 8474254865844518423
-      "Tuto a d y\xFCr\xFCme_16": 7294437477056039345
-      "Tuto a d y\xFCr\xFCme_17": 8177787110802933371
       "Tuto a d y\xFCr\xFCme_2": 4212874770939357375
       "Tuto a d y\xFCr\xFCme_3": -8167535310856671307
       "Tuto a d y\xFCr\xFCme_4": 9150589233410036141
       "Tuto a d y\xFCr\xFCme_5": 163968908463781178
-      "Tuto a d y\xFCr\xFCme_6": 8712572646434727419
-      "Tuto a d y\xFCr\xFCme_7": 7681227960815309592
-      "Tuto a d y\xFCr\xFCme_8": -3065971023374429545
-      "Tuto a d y\xFCr\xFCme_9": -243940711972116188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

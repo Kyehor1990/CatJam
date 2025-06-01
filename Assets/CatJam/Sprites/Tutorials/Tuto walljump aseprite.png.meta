@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 5c53eeaaabae4504284f7c56e6d424a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5902389485550812152
+    second: Tuto walljump aseprite_0
+  - first:
+      213: -3900697087624798520
+    second: Tuto walljump aseprite_1
+  - first:
+      213: -6871727263567695650
+    second: Tuto walljump aseprite_2
+  - first:
+      213: -964075716280198870
+    second: Tuto walljump aseprite_3
+  - first:
+      213: 1525121359351039287
+    second: Tuto walljump aseprite_4
+  - first:
+      213: -7220263506172412051
+    second: Tuto walljump aseprite_5
+  - first:
+      213: 7661047637663056354
+    second: Tuto walljump aseprite_6
+  - first:
+      213: 2599933463506496886
+    second: Tuto walljump aseprite_7
+  - first:
+      213: 1239510078513929489
+    second: Tuto walljump aseprite_8
+  - first:
+      213: -3790942222785498840
+    second: Tuto walljump aseprite_9
+  - first:
+      213: -4627554389980750323
+    second: Tuto walljump aseprite_10
+  - first:
+      213: 363977501922785127
+    second: Tuto walljump aseprite_11
+  - first:
+      213: 6400194480499003281
+    second: Tuto walljump aseprite_12
+  - first:
+      213: -6789267634487421412
+    second: Tuto walljump aseprite_13
+  - first:
+      213: 5214277882873647262
+    second: Tuto walljump aseprite_14
+  - first:
+      213: 1979216807980793380
+    second: Tuto walljump aseprite_15
+  - first:
+      213: -7892957284154491349
+    second: Tuto walljump aseprite_16
+  - first:
+      213: 8532178786232903883
+    second: Tuto walljump aseprite_17
+  - first:
+      213: 2521251147144973245
+    second: Tuto walljump aseprite_18
+  - first:
+      213: -7694515442310067930
+    second: Tuto walljump aseprite_19
+  - first:
+      213: -4024542551058804735
+    second: Tuto walljump aseprite_20
+  - first:
+      213: 900146100737075293
+    second: Tuto walljump aseprite_21
+  - first:
+      213: -5090418774042562897
+    second: Tuto walljump aseprite_22
+  - first:
+      213: -7179371653635540043
+    second: Tuto walljump aseprite_23
+  - first:
+      213: -5330880566852451968
+    second: Tuto walljump aseprite_24
+  - first:
+      213: -6197663212630725601
+    second: Tuto walljump aseprite_25
+  - first:
+      213: -2769259936077557280
+    second: Tuto walljump aseprite_26
+  - first:
+      213: -1180606368032343006
+    second: Tuto walljump aseprite_27
+  - first:
+      213: -6580477775426996557
+    second: Tuto walljump aseprite_28
+  - first:
+      213: 1090382809754272986
+    second: Tuto walljump aseprite_29
+  - first:
+      213: -5160682039747037812
+    second: Tuto walljump aseprite_30
+  - first:
+      213: 1560775084265691739
+    second: Tuto walljump aseprite_31
+  - first:
+      213: -3603618250115259452
+    second: Tuto walljump aseprite_32
+  - first:
+      213: -3001332737071761864
+    second: Tuto walljump aseprite_33
+  - first:
+      213: 4575839996965408361
+    second: Tuto walljump aseprite_34
+  - first:
+      213: 4077433213755545780
+    second: Tuto walljump aseprite_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8044ebbf800861ea0800000000000000
+      internalID: -5902389485550812152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce19b36aa0fdd9c0800000000000000
+      internalID: -3900697087624798520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed03ea53678b2a0a0800000000000000
+      internalID: -6871727263567695650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29d9827e3aee92f0800000000000000
+      internalID: -964075716280198870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735ca7fbbc15a2510800000000000000
+      internalID: 1525121359351039287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f70e188987ccb90800000000000000
+      internalID: -7220263506172412051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e1804a8c32815a60800000000000000
+      internalID: 7661047637663056354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67da4f3c5b1d41420800000000000000
+      internalID: 2599933463506496886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11dd65569df933110800000000000000
+      internalID: 1239510078513929489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82137d6322ed36bc0800000000000000
+      internalID: -3790942222785498840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ed566dccf97cfb0800000000000000
+      internalID: -4627554389980750323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto walljump aseprite_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767775c0c9b1d0500800000000000000
+      internalID: 363977501922785127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 36987b390bcd4b646be989dac12feb1e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":12.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Tuto walljump aseprite_0: -5902389485550812152
+      Tuto walljump aseprite_1: -3900697087624798520
+      Tuto walljump aseprite_10: -4627554389980750323
+      Tuto walljump aseprite_11: 363977501922785127
+      Tuto walljump aseprite_2: -6871727263567695650
+      Tuto walljump aseprite_3: -964075716280198870
+      Tuto walljump aseprite_4: 1525121359351039287
+      Tuto walljump aseprite_5: -7220263506172412051
+      Tuto walljump aseprite_6: 7661047637663056354
+      Tuto walljump aseprite_7: 2599933463506496886
+      Tuto walljump aseprite_8: 1239510078513929489
+      Tuto walljump aseprite_9: -3790942222785498840
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

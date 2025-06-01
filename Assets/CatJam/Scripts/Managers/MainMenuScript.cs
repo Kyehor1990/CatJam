@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour
 
     public static MainMenu Instance;
 
+    public GameObject MenuPanel;
+    public GameObject TutorialPanel;
+
     void Awake()
     {
         Instance = this;
@@ -24,6 +27,10 @@ public class MainMenu : MonoBehaviour
         // Eğer ayarlar paneli açıksa ESC kapatsın
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (MenuPanel != null)
+                MenuPanel.SetActive(true);
+                TutorialPanel.SetActive(false);
+
             if (settingsPanel != null && settingsPanel.activeSelf)
             {
                 CloseSettings();
@@ -44,9 +51,12 @@ public class MainMenu : MonoBehaviour
 
 
     public void OpenTutorial()
-{
-    SceneManager.LoadScene("TutorialScene");
-}
+    {
+        if (MenuPanel != null)
+            MenuPanel.SetActive(false);
+            TutorialPanel.SetActive(true);
+    }
+
 
     public void OpenSettings()
     {
@@ -63,6 +73,11 @@ public class MainMenu : MonoBehaviour
     public void OpenCredits()
     {
         SceneManager.LoadScene("CreditsScene");
+    }
+
+    public void OpenMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
