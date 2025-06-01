@@ -38,9 +38,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isWallBouncing = false;
     private float wallBounceInputLockTimer = 0f;
 
+    private Animator animator;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -75,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (wallBounceInputLockTimer > 0)
             wallBounceInputLockTimer -= Time.deltaTime;
+
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
     void FixedUpdate()

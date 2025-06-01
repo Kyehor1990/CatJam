@@ -26,10 +26,14 @@ public class PlayerEmote : MonoBehaviour
     private bool emoteInterrupted = false;
 
     [SerializeField] CubeBoss cubeBoss;
+    private Animator animator;
+
+    [SerializeField] GameObject objNah;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
 
         if (stressSlider != null)
         {
@@ -63,6 +67,13 @@ public class PlayerEmote : MonoBehaviour
 
     void StartEmote(float duration, int stressAmount)
     {
+        if (duration == mediumEmoteDuration)
+        {
+            animator.SetBool("Taunt2", true);
+        }else if (duration == shortEmoteDuration)
+        {
+            objNah.SetActive(true);
+        }
         isEmoting = true;
         emoteTimer = duration;
         currentEmoteStress = stressAmount;
@@ -88,6 +99,9 @@ public class PlayerEmote : MonoBehaviour
     {
         isEmoting = false;
         emoteTimer = 0f;
+
+        animator.SetBool("Taunt2", false);
+        objNah.SetActive(false);
 
         if (playerMovement != null)
             playerMovement.enabled = true;
