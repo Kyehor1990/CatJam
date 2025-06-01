@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -7,13 +8,21 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // ESC tuşuna yalnızca oyun sahnesindeysek tepki ver
+        if (Input.GetKeyDown(KeyCode.Escape) && IsInGameScene())
         {
             if (isPaused)
                 ResumeGame();
             else
                 PauseGame();
         }
+    }
+
+    bool IsInGameScene()
+    {
+        // MainMenu veya Credits gibi menü sahneleri değilse oyun sahnesindeyiz diyelim
+        string sceneName = SceneManager.GetActiveScene().name;
+        return sceneName != "MainMenu" && sceneName != "CreditsScene";
     }
 
     public void ResumeGame()
@@ -33,6 +42,6 @@ public class PauseManager : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 }

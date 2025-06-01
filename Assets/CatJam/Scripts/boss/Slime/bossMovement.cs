@@ -4,7 +4,6 @@ public class BossMovement : MonoBehaviour
 {
     public enum AttackPattern
     {
-        JumpOnPlayer,
         StretchArm,
         SlimeProjectile
     }
@@ -30,15 +29,8 @@ public class BossMovement : MonoBehaviour
 
     [SerializeField] private float projectileDestroyTime = 3f;
 
-    [Header("Jump Attack")]
-    public float jumpForce = 10f;
-    public float jumpAttackRange = 1.5f;
-    public Transform groundCheck;
-    public LayerMask groundLayer;
-
     private bool isAttacking = false;
     private bool isCooldown = false;
-    private bool hasJumped = false;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -49,7 +41,7 @@ public class BossMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.isKinematic = false;  // Dinamik olmalı
+        rb.isKinematic = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -71,46 +63,32 @@ public class BossMovement : MonoBehaviour
         FlipTowardsPlayer();
     }
 
-   void FixedUpdate()
-{
-    if (!isCooldown)
+    void FixedUpdate()
     {
-        if (isAttacking)
+        if (!isCooldown)
         {
-            // Eğer zıplama animasyonu oynanıyorsa hareket devam etsin
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack"))  
-            {
-                // Hareket kontrolünü burada yapabilirsin,
-                // mesela oyuncuya doğru yatay hız ver
-                Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
-                rb.velocity = new Vector2(direction.x * moveSpeed*20, rb.velocity.y);
-            }
-            else
+            if (isAttacking)
             {
                 rb.velocity = Vector2.zero;
             }
-        }
-        else
-        {
-            // Normal takip mantığı
-            if (Vector2.Distance(transform.position, player.position) > attackRange)
-            {
-                FollowPlayer();
-            }
             else
             {
-                rb.velocity = Vector2.zero;
+                if (Vector2.Distance(transform.position, player.position) > attackRange)
+                {
+                    FollowPlayer();
+                }
+                else
+                {
+                    rb.velocity = Vector2.zero;
+                }
             }
         }
     }
-}
-
 
     void FollowPlayer()
     {
         if (player == null) return;
 
-        // Sadece X ekseninde takip için
         Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
         rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
     }
@@ -138,9 +116,6 @@ public class BossMovement : MonoBehaviour
     {
         switch (pattern)
         {
-            case AttackPattern.JumpOnPlayer:
-                animator.SetTrigger("JumpAttack");
-                break;
             case AttackPattern.StretchArm:
                 animator.SetTrigger("StretchArm");
                 break;
@@ -160,40 +135,6 @@ public class BossMovement : MonoBehaviour
             Debug.LogWarning("Attack stuck, forcing reset.");
             OnAttackEnd();
         }
-    }
-
-    // === ANIMATION EVENTS ===
-
-    public void DoJumpAttack()
-    {
-        if (player == null || !IsGrounded()) return;
-
-        Vector2 direction = (player.position - transform.position).normalized;
-        Vector2 jumpVelocity = new Vector2(direction.x * jumpForce * 0.7f, jumpForce);
-        rb.velocity = jumpVelocity;
-        hasJumped = true;
-
-        FlipTowardsPlayer();
-        Invoke(nameof(CheckJumpHit), 0.5f);
-    }
-
-    void CheckJumpHit()
-    {
-        if (!hasJumped) return;
-
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, jumpAttackRange, LayerMask.GetMask("Player"));
-        if (hit != null)
-        {
-            PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(20);
-                playerHealth.AttackStress(10);
-            }
-        }
-
-        hasJumped = false;
-        OnAttackEnd();
     }
 
     public void DoStretchArm()
@@ -270,10 +211,8 @@ public class BossMovement : MonoBehaviour
         isAttacking = false;
         isCooldown = true;
 
-        // Hareketi hemen durdur
         rb.velocity = Vector2.zero;
 
-        animator.ResetTrigger("JumpAttack");
         animator.ResetTrigger("StretchArm");
         animator.ResetTrigger("ProjectileAttack");
 
@@ -284,29 +223,5 @@ public class BossMovement : MonoBehaviour
     void ResetCooldown()
     {
         isCooldown = false;
-    }
-
-    bool IsGrounded()
-    {
-        if (groundCheck == null) return false;
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (player != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, attackRange);
-
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position, jumpAttackRange);
-        }
-
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(groundCheck.position, 0.1f);
-        }
     }
 }

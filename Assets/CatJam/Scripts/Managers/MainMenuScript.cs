@@ -5,15 +5,11 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string firstLevelSceneName = "Boss1Scene"; // İlk sahne adı
     [SerializeField] private GameObject settingsPanel; // Ayarlar paneli
-    
 
     public static MainMenu Instance;
-    
 
     void Awake()
     {
-       
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -23,16 +19,23 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-
-
     void Update()
-{
-    if (Input.GetKeyDown(KeyCode.Escape) && settingsPanel.activeSelf)
     {
-        CloseSettings();
+        // Eğer ayarlar paneli açıksa ESC kapatsın
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (settingsPanel != null && settingsPanel.activeSelf)
+            {
+                CloseSettings();
+            }
+            else
+            {
+                // Ayarlar paneli kapalıysa, ESC ile ana menüde farklı bir işlem yapmak istersen buraya yazabilirsin.
+                // Örnek: Oyundan çıkış için onay paneli açmak vs.
+                Debug.Log("ESC basıldı, ama ayar paneli kapalı.");
+            }
+        }
     }
-}
-
 
     public void PlayGame()
     {
