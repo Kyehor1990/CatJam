@@ -38,7 +38,6 @@ public class BossMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private float pushValue = 5f;
 
     void Start()
     {
@@ -110,7 +109,7 @@ public class BossMovement : MonoBehaviour
     // --- Animasyon event fonksiyonları ---
     // Animasyon event'leri bu fonksiyonları çağıracak!
 
-    public void DoJumpAttack()
+    /*public void DoJumpAttack()
     {
         Debug.Log("Jump Attack Executed");
         Vector2 jumpDir = new Vector2(player.position.x - transform.position.x, 0).normalized;
@@ -120,7 +119,7 @@ public class BossMovement : MonoBehaviour
         float jumpForceY = Mathf.Sqrt(2 * jumpHeight * gravity);
 
         rb.linearVelocity = new Vector2(jumpDir.x * jumpForceX, jumpForceY);
-    }
+    }*/
 
     public void DoStretchArm()
     {
@@ -208,19 +207,5 @@ public class BossMovement : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.down * 0.1f, Vector2.down, 0.2f, LayerMask.GetMask("Ground"));
         return hit.collider != null;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (playerRb != null)
-            {
-                Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
-                float knockbackForce = pushValue * 2f;
-                playerRb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
-            }
-        }
     }
 }
