@@ -10,9 +10,13 @@ public class PlayerHealth : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private PlayerEmote playerEmote;
+    private Animator animator;
+
+    public Sprite ÖLDÜ;
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         playerEmote = GetComponent<PlayerEmote>();
     }
 
@@ -47,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void AttackStress(int amount)
     {
-        if ( playerEmote.stress >= amount)
+        if (playerEmote.stress >= amount)
         {
             playerEmote.stress -= amount;
         }
@@ -63,6 +67,18 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Öldü!");
+        animator.SetTrigger("Die");
+        playerMovement.enabled = false;
+        playerEmote.enabled = false;
+    }
+
+    public void vallaÖldü()
+    {
+        if (ÖLDÜ != null)
+        {
+            animator.enabled = false;
+            GetComponent<SpriteRenderer>().sprite = ÖLDÜ;
+        }
+
     }
 }

@@ -104,8 +104,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Crouch(bool state)
     {
-        animator.SetBool("Crouch", state);
         isCrouching = state;
+        animator.SetBool("Crouch", state);
         if (standingCollider && crouchingCollider)
         {
             standingCollider.enabled = !state;

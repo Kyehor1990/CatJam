@@ -48,11 +48,11 @@ public class PlayerEmote : MonoBehaviour
 
         if (!isEmoting)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.J))
                 StartEmote(shortEmoteDuration, shortEmoteStress);
-            else if (Input.GetKeyDown(KeyCode.Alpha2) && playerMovement.isGrounded)
+            else if (Input.GetKeyDown(KeyCode.K) && playerMovement.isGrounded)
                 StartEmote(mediumEmoteDuration, mediumEmoteStress);
-            else if (Input.GetKeyDown(KeyCode.Alpha3) && playerMovement.isGrounded)
+            else if (Input.GetKeyDown(KeyCode.L) && playerMovement.isGrounded)
                 StartEmote(longEmoteDuration, longEmoteStress);
         }
         else
