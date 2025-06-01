@@ -104,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Crouch(bool state)
     {
+        animator.SetBool("Crouch", state);
         isCrouching = state;
         if (standingCollider && crouchingCollider)
         {
@@ -114,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
 
     void StartDodge()
     {
+        animator.SetBool("Dodge", true); // Animasyonu başlat, ilk iş olarak
         isDodging = true;
         dodgeTimer = dodgeDuration;
         lastDodgeTime = Time.time;
@@ -122,8 +124,10 @@ public class PlayerMovement : MonoBehaviour
         dodgeDirection = new Vector2(dodgeDirX, 0).normalized;
     }
 
+
     void EndDodge()
     {
+        animator.SetBool("Dodge", false);
         isDodging = false;
     }
 
@@ -157,5 +161,12 @@ public class PlayerMovement : MonoBehaviour
         {
             WallBounce(trigger.bounceDirection);
         }
+
+        if (other.CompareTag("WallJumpTrigger")) // İstediğin tag ile eşleştir
+        {
+            animator.SetTrigger("WallJump"); // Animator'daki trigger parametresi
+        }
     }
+    
+    
 }

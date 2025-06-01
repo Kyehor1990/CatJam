@@ -806,6 +806,7 @@ MonoBehaviour:
   longEmoteStress: 15
   stressSlider: {fileID: 462289069}
   cubeBoss: {fileID: 873668558}
+  objNah: {fileID: 1305495921}
 --- !u!4 &591726974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8440468370359610552, guid: 81e4c012d8d74ff4f922e0f3153918b4, type: 3}
@@ -1627,7 +1628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1305495922
 MonoBehaviour:
   m_ObjectHideFlags: 0

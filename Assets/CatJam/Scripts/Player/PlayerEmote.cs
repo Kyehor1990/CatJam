@@ -73,6 +73,9 @@ public class PlayerEmote : MonoBehaviour
         }else if (duration == shortEmoteDuration)
         {
             objNah.SetActive(true);
+        }else if (duration == longEmoteDuration)
+        {
+            animator.SetBool("Taunt3", true);
         }
         isEmoting = true;
         emoteTimer = duration;
@@ -101,6 +104,7 @@ public class PlayerEmote : MonoBehaviour
         emoteTimer = 0f;
 
         animator.SetBool("Taunt2", false);
+        animator.SetBool("Taunt3", false);
         objNah.SetActive(false);
 
         if (playerMovement != null)
