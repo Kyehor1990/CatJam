@@ -12,11 +12,7 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject); // İkinci GameManager sahneye girerse yok et
-            return;
-        }
+       
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
