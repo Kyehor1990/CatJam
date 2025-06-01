@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private float moveInput;
     private bool isCrouching;
-    private bool isDodging;
+    public bool isDodging;
     private float dodgeTimer = 0f;
     private float lastDodgeTime = -Mathf.Infinity;
     private Vector2 dodgeDirection;

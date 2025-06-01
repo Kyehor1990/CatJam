@@ -27,12 +27,19 @@ void Update()
         Destroy(gameObject, lifetime);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+private void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
+        PlayerMovement player = collision.GetComponent<PlayerMovement>();
+        if (player != null && !player.isDodging)
         {
-            other.GetComponent<PlayerHealth>()?.TakeDamage(damage);
-            Destroy(gameObject);
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
         }
     }
+}
 }
