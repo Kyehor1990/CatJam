@@ -31,6 +31,8 @@ public class BossMovement : MonoBehaviour
 
     private bool isAttacking = false;
     private bool isCooldown = false;
+    private bool tutorialCompleted = false;
+    private bool isActive = false;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -42,15 +44,31 @@ public class BossMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = false;
+
         animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogWarning("BossMovement: Animator bileşeni bulunamadı! Animasyonlar çalışmayacak.");
+        }
+
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (!tutorialCompleted)
         {
-            ExecutePattern(AttackPattern.StretchArm);
+            if (CheckTutorialInputs())
+            {
+                tutorialCompleted = true;
+                ActivateSlime();
+            }
+            else return;
+        }
+
+        if (isActive)
+        {
+            MoveAndAttack();
         }
 
         if (!isAttacking && !isCooldown && player != null && Vector2.Distance(transform.position, player.position) <= attackRange)
@@ -61,36 +79,46 @@ public class BossMovement : MonoBehaviour
         }
 
         FlipTowardsPlayer();
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ExecutePattern(AttackPattern.StretchArm);
+        }
+    }
+
+    void ActivateSlime()
+    {
+        isActive = true;
+        Debug.Log("Tutorial tamamlandı. Slime aktif!");
+    }
+
+    void MoveAndAttack()
+    {
+        if (isAttacking || isCooldown) return;
+
+        if (player == null) return;
+
+        float distance = Vector2.Distance(transform.position, player.position);
+
+        if (distance > attackRange)
+        {
+            FollowPlayer();
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     void FixedUpdate()
     {
-        if (!isCooldown)
-        {
-            if (isAttacking)
-            {
-                rb.velocity = Vector2.zero;
-            }
-            else
-            {
-                if (Vector2.Distance(transform.position, player.position) > attackRange)
-                {
-                    FollowPlayer();
-                }
-                else
-                {
-                    rb.velocity = Vector2.zero;
-                }
-            }
-        }
+        // Hareket Update içinde ele alındı.
     }
 
     void FollowPlayer()
     {
-        if (player == null) return;
-
         Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
-        rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
     }
 
     void FlipTowardsPlayer()
@@ -98,11 +126,7 @@ public class BossMovement : MonoBehaviour
         if (player == null) return;
 
         Vector3 scale = transform.localScale;
-        if (player.position.x < transform.position.x)
-            scale.x = Mathf.Abs(scale.x);
-        else
-            scale.x = -Mathf.Abs(scale.x);
-
+        scale.x = player.position.x < transform.position.x ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
         transform.localScale = scale;
     }
 
@@ -114,14 +138,21 @@ public class BossMovement : MonoBehaviour
 
     void ExecutePattern(AttackPattern pattern)
     {
-        switch (pattern)
+        if (animator != null)
         {
-            case AttackPattern.StretchArm:
-                animator.SetTrigger("StretchArm");
-                break;
-            case AttackPattern.SlimeProjectile:
-                animator.SetTrigger("ProjectileAttack");
-                break;
+            switch (pattern)
+            {
+                case AttackPattern.StretchArm:
+                    animator.SetTrigger("StretchArm");
+                    break;
+                case AttackPattern.SlimeProjectile:
+                    animator.SetTrigger("ProjectileAttack");
+                    break;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Animator yok, animasyon trigger gönderilemedi.");
         }
 
         CancelInvoke(nameof(ForceAttackEnd));
@@ -198,7 +229,7 @@ public class BossMovement : MonoBehaviour
             Rigidbody2D projRb = instance.GetComponent<Rigidbody2D>();
             if (projRb != null)
             {
-                projRb.velocity = dir * speed;
+                projRb.linearVelocity = dir * speed;
             }
             Destroy(instance, projectileDestroyTime);
         }
@@ -211,10 +242,13 @@ public class BossMovement : MonoBehaviour
         isAttacking = false;
         isCooldown = true;
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
-        animator.ResetTrigger("StretchArm");
-        animator.ResetTrigger("ProjectileAttack");
+        if (animator != null)
+        {
+            animator.ResetTrigger("StretchArm");
+            animator.ResetTrigger("ProjectileAttack");
+        }
 
         CancelInvoke(nameof(ForceAttackEnd));
         Invoke(nameof(ResetCooldown), attackCooldown);
@@ -223,5 +257,10 @@ public class BossMovement : MonoBehaviour
     void ResetCooldown()
     {
         isCooldown = false;
+    }
+
+    bool CheckTutorialInputs()
+    {
+        return Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.Space);
     }
 }
