@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerEmote : MonoBehaviour
 {
     public int stress = 0;
-    [SerializeField]private int maxStress = 100;
+    public int maxStress = 100;
 
     [Header("Emote Süreleri")]
     [SerializeField] float shortEmoteDuration = 1f;
