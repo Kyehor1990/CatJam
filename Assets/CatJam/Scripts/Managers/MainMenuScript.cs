@@ -42,6 +42,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(firstLevelSceneName);
     }
 
+
+    public void OpenTutorial()
+{
+    SceneManager.LoadScene("TutorialScene");
+}
+
     public void OpenSettings()
     {
         if (settingsPanel != null)
