@@ -16,8 +16,8 @@ public class NextScene : MonoBehaviour
     {
 
     }
-    
-        public void PlayGame()
+
+    public void PlayGame()
     {
         SceneManager.LoadScene(firstLevelSceneName);
     }
