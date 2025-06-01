@@ -651,6 +651,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1260184012}
+    - target: {fileID: 5316064687633305410, guid: 81e4c012d8d74ff4f922e0f3153918b4, type: 3}
+      propertyPath: moveSpeed
+      value: 10.21
+      objectReference: {fileID: 0}
     - target: {fileID: 8440468370359610552, guid: 81e4c012d8d74ff4f922e0f3153918b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.8102
@@ -1241,9 +1245,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 947149029}
-        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-        m_MethodName: QuitToMainMenu
+      - m_Target: {fileID: 1880214170}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1449,7 +1453,7 @@ Transform:
   m_GameObject: {fileID: 1129622751}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -0.103, z: 0}
+  m_LocalPosition: {x: -0.559, y: -0.103, z: 0}
   m_LocalScale: {x: 0.44682756, y: 0.44682756, z: 0.44682756}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1625,8 +1629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 41568546}
   moveSpeed: 2
-  attackRange: 5
-  patternDelay: 2
+  attackRange: 6.65
+  patternDelay: 1
   stretchArmPrefab: {fileID: 7535802178773789195, guid: 5e69df21b83e6ee47978edbc148b2806, type: 3}
   lowProjectilePrefab: {fileID: 7535802178773789195, guid: 5e69df21b83e6ee47978edbc148b2806, type: 3}
   midProjectilePrefab: {fileID: 7535802178773789195, guid: 5e69df21b83e6ee47978edbc148b2806, type: 3}
@@ -1634,8 +1638,10 @@ MonoBehaviour:
   lowProjectileSpawnPoint: {fileID: 1347757262}
   midProjectileSpawnPoint: {fileID: 1281006360}
   highProjectileSpawnPoint: {fileID: 1129622752}
---- !u!61 &1260184014
-BoxCollider2D:
+  projectileDestroyTime: 3
+  pushValue: 10
+--- !u!60 &1260184014
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1678,8 +1684,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1610487, y: 0.89887637}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.24053118, y: 0.42976436}
+      - {x: -0.3697226, y: 0.26610708}
+      - {x: -0.3989952, y: 0.17044987}
+      - {x: -0.42653352, y: 0.104173146}
+      - {x: -0.5726548, y: 0.018726591}
+      - {x: -0.5805243, y: -0.35580522}
+      - {x: -0.54307115, y: -0.411985}
+      - {x: -0.39325842, y: -0.44943818}
+      - {x: 0.48689136, y: -0.44943818}
+      - {x: 0.57855695, y: -0.35004878}
+      - {x: 0.53133976, y: -0.014718916}
+      - {x: 0.062227696, y: 0.44943818}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1271352309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1791,7 @@ Transform:
   m_GameObject: {fileID: 1347757261}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.422, y: -0.398, z: 0}
+  m_LocalPosition: {x: -0.291, y: -0.398, z: 0}
   m_LocalScale: {x: 0.44682756, y: 0.44682756, z: 0.44682756}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2418,6 +2437,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 267bc69979fdef24faaf908e850cf9a6, type: 3}
+--- !u!114 &1880214170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2411773292022474224, guid: 267bc69979fdef24faaf908e850cf9a6, type: 3}
+  m_PrefabInstance: {fileID: 1880214169}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d7cc270d776bf4db6213f9e333a0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111747127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,7 +2505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ana Men\xFCye D\xF6n\n"
+  m_text: "Oyundan \xC7\u0131k\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

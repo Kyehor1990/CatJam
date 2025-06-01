@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class bossMovement : MonoBehaviour
+public class BossMovement : MonoBehaviour
 {
     public enum AttackPattern
     {
@@ -10,51 +10,59 @@ public class bossMovement : MonoBehaviour
         SlimeProjectile
     }
 
+    [Header("Player & Movement")]
     public Transform player;
     public float moveSpeed = 2f;
     public float attackRange = 5f;
     public float patternDelay = 2f;
 
+    [Header("Prefabs")]
     public GameObject stretchArmPrefab;
     public GameObject lowProjectilePrefab;
     public GameObject midProjectilePrefab;
     public GameObject highProjectilePrefab;
 
+    [Header("Projectile Spawn Points")]
     public Transform lowProjectileSpawnPoint;
     public Transform midProjectileSpawnPoint;
     public Transform highProjectileSpawnPoint;
+
+    [SerializeField] private float projectileDestroyTime = 3f;
 
     private bool isAttacking = false;
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private float pushValue = 5f; // Adjust the push value as needed
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
         StartCoroutine(PatternLoop());
     }
 
     void Update()
     {
-        FlipTowardsPlayer();
-
         if (!isAttacking && Vector2.Distance(transform.position, player.position) > attackRange)
         {
             FollowPlayer();
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
         }
+
+        FlipTowardsPlayer();
     }
 
     void FollowPlayer()
     {
         Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
-        rb.linearVelocity = direction * moveSpeed;
+        rb.velocity = direction * moveSpeed;
     }
 
     void FlipTowardsPlayer()
@@ -74,8 +82,8 @@ public class bossMovement : MonoBehaviour
             if (!isAttacking && Vector2.Distance(transform.position, player.position) <= attackRange)
             {
                 isAttacking = true;
-                AttackPattern nextPattern = ChooseRandomPattern();
-                yield return ExecutePattern(nextPattern);
+                AttackPattern pattern = ChooseRandomPattern();
+                yield return ExecutePattern(pattern);
                 isAttacking = false;
             }
 
@@ -85,9 +93,8 @@ public class bossMovement : MonoBehaviour
 
     AttackPattern ChooseRandomPattern()
     {
-        int patternCount = System.Enum.GetValues(typeof(AttackPattern)).Length;
-        int randomIndex = Random.Range(0, patternCount);
-        return (AttackPattern)randomIndex;
+        int count = System.Enum.GetValues(typeof(AttackPattern)).Length;
+        return (AttackPattern)Random.Range(0, count);
     }
 
     IEnumerator ExecutePattern(AttackPattern pattern)
@@ -95,15 +102,13 @@ public class bossMovement : MonoBehaviour
         switch (pattern)
         {
             case AttackPattern.JumpOnPlayer:
-                yield return StartCoroutine(JumpOnPlayer());
+                yield return JumpOnPlayer();
                 break;
-
             case AttackPattern.StretchArm:
-                yield return StartCoroutine(StretchArm());
+                yield return StretchArm();
                 break;
-
             case AttackPattern.SlimeProjectile:
-                yield return StartCoroutine(SlimeProjectileAttack());
+                yield return SlimeProjectileAttack();
                 break;
         }
     }
@@ -113,21 +118,30 @@ public class bossMovement : MonoBehaviour
         Debug.Log("Jump Attack Started");
 
         Vector2 jumpDir = new Vector2(player.position.x - transform.position.x, 0).normalized;
-        float jumpForce = 15f;
-        float jumpDuration = 0.4f;
+        float jumpForceX = 8f;
+        float jumpHeight = 4f;
+        float gravity = Mathf.Abs(Physics2D.gravity.y);
+        float jumpForceY = Mathf.Sqrt(2 * jumpHeight * gravity);
 
-        float elapsed = 0f;
-        while (elapsed < jumpDuration)
+        rb.velocity = new Vector2(jumpDir.x * jumpForceX, jumpForceY);
+
+        yield return new WaitForSeconds(0.8f);
+        float timeout = 2f;
+        float timer = 0f;
+
+        while (!IsGrounded() && timer < timeout)
         {
-            rb.linearVelocity = jumpDir * jumpForce;
-            elapsed += Time.deltaTime;
+            timer += Time.deltaTime;
             yield return null;
         }
 
-        rb.linearVelocity = Vector2.zero;
-
-        yield return new WaitForSeconds(0.6f);
         Debug.Log("Jump Attack Ended");
+    }
+
+    bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.down * 0.1f, Vector2.down, 0.2f, LayerMask.GetMask("Ground"));
+        return hit.collider != null;
     }
 
     IEnumerator StretchArm()
@@ -135,10 +149,10 @@ public class bossMovement : MonoBehaviour
         Debug.Log("Stretch Arm Attack Started");
         yield return new WaitForSeconds(0.2f);
 
-        if (stretchArmPrefab != null)
+        if (stretchArmPrefab != null && midProjectileSpawnPoint != null)
         {
             float direction = transform.localScale.x > 0 ? 1f : -1f;
-            Quaternion rotation = direction == 1f ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+            Quaternion rotation = direction > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
 
             GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, rotation);
             arm.transform.parent = transform;
@@ -157,42 +171,57 @@ public class bossMovement : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         Vector2 dir = (player.position - transform.position).normalized;
-        int randomIndex = Random.Range(0, 3); // 0: low, 1: mid, 2: high
+        int randomIndex = Random.Range(0, 3);
+
+        GameObject selectedPrefab = null;
+        Transform spawnPoint = null;
+        float speed = 5f;
 
         switch (randomIndex)
         {
             case 0:
-                if (lowProjectilePrefab != null)
-                {
-                    GameObject low = Instantiate(lowProjectilePrefab, lowProjectileSpawnPoint.position, Quaternion.identity);
-                    Rigidbody2D rbLow = low.GetComponent<Rigidbody2D>();
-                    if (rbLow != null) rbLow.linearVelocity = dir * 5f;
-                    Destroy(low, 4f);
-                }
+                selectedPrefab = lowProjectilePrefab;
+                spawnPoint = lowProjectileSpawnPoint;
+                speed = 5f;
                 break;
-
             case 1:
-                if (midProjectilePrefab != null)
-                {
-                    GameObject mid = Instantiate(midProjectilePrefab, midProjectileSpawnPoint.position, Quaternion.identity);
-                    Rigidbody2D rbMid = mid.GetComponent<Rigidbody2D>();
-                    if (rbMid != null) rbMid.linearVelocity = dir * 6f;
-                    Destroy(mid, 4f);
-                }
+                selectedPrefab = midProjectilePrefab;
+                spawnPoint = midProjectileSpawnPoint;
+                speed = 6f;
                 break;
-
             case 2:
-                if (highProjectilePrefab != null)
-                {
-                    GameObject high = Instantiate(highProjectilePrefab, highProjectileSpawnPoint.position, Quaternion.identity);
-                    Rigidbody2D rbHigh = high.GetComponent<Rigidbody2D>();
-                    if (rbHigh != null) rbHigh.linearVelocity = dir * 7f;
-                    Destroy(high, 4f);
-                }
+                selectedPrefab = highProjectilePrefab;
+                spawnPoint = highProjectileSpawnPoint;
+                speed = 7f;
                 break;
+        }
+
+        if (selectedPrefab != null && spawnPoint != null)
+        {
+            GameObject instance = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity);
+            Rigidbody2D projRb = instance.GetComponent<Rigidbody2D>();
+            if (projRb != null)
+            {
+                projRb.velocity = dir * speed;
+            }
+            Destroy(instance, projectileDestroyTime);
         }
 
         yield return new WaitForSeconds(1.2f);
         Debug.Log("Slime Projectile Attack Ended");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
+                float knockbackForce = pushValue * 2f; // Adjust the knockback force as needed
+                playerRb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class StretchHitbox : MonoBehaviour
 {
@@ -15,10 +15,10 @@ public class StretchHitbox : MonoBehaviour
         initialScale = transform.localScale;
         targetScale = new Vector3(maxLength, initialScale.y, initialScale.z);
 
-        StartCoroutine(Stretch());
+        StartCoroutine(StretchAndDestroy());
     }
 
-    IEnumerator Stretch()
+    IEnumerator StretchAndDestroy()
     {
         float elapsed = 0f;
 
@@ -31,6 +31,9 @@ public class StretchHitbox : MonoBehaviour
         }
 
         transform.localScale = targetScale;
+
+        yield return new WaitForSeconds(stayDuration);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,7 +41,7 @@ public class StretchHitbox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player hit by arm!");
-            // Damage veya efekt
+            // Buraya hasar verme kodunu ekleyebilirsin.
         }
     }
 }
