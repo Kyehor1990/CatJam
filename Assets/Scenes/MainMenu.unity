@@ -3836,7 +3836,7 @@ PrefabInstance:
       objectReference: {fileID: 362979568}
     - target: {fileID: 2411773292022474224, guid: 267bc69979fdef24faaf908e850cf9a6, type: 3}
       propertyPath: firstLevelSceneName
-      value: boss
+      value: TutorialScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
