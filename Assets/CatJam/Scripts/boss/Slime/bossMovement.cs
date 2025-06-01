@@ -30,8 +30,15 @@ public class BossMovement : MonoBehaviour
 
     [SerializeField] private float projectileDestroyTime = 3f;
 
+    [Header("Jump Attack")]
+    public float jumpForce = 10f;
+    public float jumpAttackRange = 1.5f;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
     private bool isAttacking = false;
     private bool isCooldown = false;
+    private bool hasJumped = false;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -81,7 +88,6 @@ public class BossMovement : MonoBehaviour
 
         Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
         rb.velocity = direction * moveSpeed;
-
     }
 
     void FlipTowardsPlayer()
@@ -130,6 +136,39 @@ public class BossMovement : MonoBehaviour
     }
 
     // ANİMASYON EVENTLERİNDEN ÇAĞRILACAK
+
+    public void DoJumpAttack()
+    {
+        if (player == null || !IsGrounded()) return;
+
+        Vector2 direction = (player.position - transform.position).normalized;
+        direction.y = 1f; // yukarı yön vererek zıplama
+
+        rb.velocity = direction * jumpForce;
+        hasJumped = true;
+
+        Invoke(nameof(CheckJumpHit), 0.5f); // Zıplama sonrası hasar kontrolü
+    }
+
+    void CheckJumpHit()
+    {
+        if (!hasJumped) return;
+
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, jumpAttackRange, LayerMask.GetMask("Player"));
+        if (hit != null)
+        {
+            PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(20); // Hasar miktarı isteğe bağlı
+                playerHealth.AttackStress(10);
+            }
+        }
+
+        hasJumped = false;
+        OnAttackEnd();
+    }
+
     public void DoStretchArm()
     {
         if (stretchArmPrefab != null && midProjectileSpawnPoint != null)
@@ -211,8 +250,8 @@ public class BossMovement : MonoBehaviour
 
     bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.down * 0.1f, Vector2.down, 0.2f, LayerMask.GetMask("Ground"));
-        return hit.collider != null;
+        if (groundCheck == null) return false;
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
     void OnDrawGizmosSelected()
@@ -221,6 +260,15 @@ public class BossMovement : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackRange);
+
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, jumpAttackRange);
+        }
+
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(groundCheck.position, 0.1f);
         }
     }
 }

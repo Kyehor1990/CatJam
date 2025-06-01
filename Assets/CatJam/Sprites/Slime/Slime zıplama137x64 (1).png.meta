@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 15e52c74ffba5684ba5e191163b25dd7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1756762251769781047
+    second: "Slime z\u0131plama137x64 (1)_0"
+  - first:
+      213: -1870422918564018584
+    second: "Slime z\u0131plama137x64 (1)_1"
+  - first:
+      213: 4715432651386103649
+    second: "Slime z\u0131plama137x64 (1)_2"
+  - first:
+      213: 3171559565461754553
+    second: "Slime z\u0131plama137x64 (1)_3"
+  - first:
+      213: -6276108254280296125
+    second: "Slime z\u0131plama137x64 (1)_4"
+  - first:
+      213: 8490842555781832
+    second: "Slime z\u0131plama137x64 (1)_5"
+  - first:
+      213: -9077568933225257313
+    second: "Slime z\u0131plama137x64 (1)_6"
+  - first:
+      213: 4911317346527211165
+    second: "Slime z\u0131plama137x64 (1)_7"
+  - first:
+      213: -394082636356665181
+    second: "Slime z\u0131plama137x64 (1)_8"
+  - first:
+      213: 2360384466548419454
+    second: "Slime z\u0131plama137x64 (1)_9"
+  - first:
+      213: 578846719373767262
+    second: "Slime z\u0131plama137x64 (1)_10"
+  - first:
+      213: -7033948769294915623
+    second: "Slime z\u0131plama137x64 (1)_11"
+  - first:
+      213: 5246096727937546994
+    second: "Slime z\u0131plama137x64 (1)_12"
+  - first:
+      213: -7996921612899182095
+    second: "Slime z\u0131plama137x64 (1)_13"
+  - first:
+      213: 9097444866154598487
+    second: "Slime z\u0131plama137x64 (1)_14"
+  - first:
+      213: 4393324469902798429
+    second: "Slime z\u0131plama137x64 (1)_15"
+  - first:
+      213: 8761409358300265981
+    second: "Slime z\u0131plama137x64 (1)_16"
+  - first:
+      213: 3931486068134068121
+    second: "Slime z\u0131plama137x64 (1)_17"
+  - first:
+      213: -3338421711733685880
+    second: "Slime z\u0131plama137x64 (1)_18"
+  - first:
+      213: 1350815403217568240
+    second: "Slime z\u0131plama137x64 (1)_19"
+  - first:
+      213: -6268626367195858606
+    second: "Slime z\u0131plama137x64 (1)_20"
+  - first:
+      213: 5651391632582767470
+    second: "Slime z\u0131plama137x64 (1)_21"
+  - first:
+      213: 5849355098457107378
+    second: "Slime z\u0131plama137x64 (1)_22"
+  - first:
+      213: 6846821368386352573
+    second: "Slime z\u0131plama137x64 (1)_23"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_0"
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 62
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b9d83d5f5416810800000000000000
+      internalID: 1756762251769781047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_1"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 3
+        width: 59
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8660e37f34cea06e0800000000000000
+      internalID: -1870422918564018584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_2"
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 3
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167a5245305907140800000000000000
+      internalID: 4715432651386103649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_3"
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 3
+        width: 56
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b217530f94a30c20800000000000000
+      internalID: 3171559565461754553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_4"
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 3
+        width: 55
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349d9b38bc8c6e8a0800000000000000
+      internalID: -6276108254280296125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_5"
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 3
+        width: 56
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c29166506a2e1000800000000000000
+      internalID: 8490842555781832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_6"
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 3
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96acf6762ff50280800000000000000
+      internalID: -9077568933225257313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_7"
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 3
+        width: 58
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9ee7fafa11882440800000000000000
+      internalID: 4911317346527211165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_8"
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 3
+        width: 59
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0cfcf1eefe78af0800000000000000
+      internalID: -394082636356665181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_9"
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 7
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7be7fd9a25c1c020800000000000000
+      internalID: 2360384466548419454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_10"
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 15
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e527caf360a780800800000000000000
+      internalID: 578846719373767262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_11"
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 24
+        width: 47
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d761ed9cd4626e90800000000000000
+      internalID: -7033948769294915623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_12"
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 21
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa7e06dd21edc840800000000000000
+      internalID: 5246096727937546994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_13"
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 14
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f9108e992a350190800000000000000
+      internalID: -7996921612899182095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_14"
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 7
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75098dac7ed904e70800000000000000
+      internalID: 9097444866154598487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_15"
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 3
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e669b145938fc30800000000000000
+      internalID: 4393324469902798429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_16"
+      rect:
+        serializedVersion: 2
+        x: 2274
+        y: 3
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd35453467c69970800000000000000
+      internalID: 8761409358300265981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_17"
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 2
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99f3782cfb17f8630800000000000000
+      internalID: 3931486068134068121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_18"
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1
+        width: 50
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88189a1142b8ba1d0800000000000000
+      internalID: -3338421711733685880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_19"
+      rect:
+        serializedVersion: 2
+        x: 2685
+        y: 1
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1c8e9c37f0fb210800000000000000
+      internalID: 1350815403217568240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_20"
+      rect:
+        serializedVersion: 2
+        x: 2822
+        y: 3
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259b4a9188d5109a0800000000000000
+      internalID: -6268626367195858606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_21"
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 3
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63f5ba5fb6cd6e40800000000000000
+      internalID: 5651391632582767470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_22"
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 3
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbe7a888751d2150800000000000000
+      internalID: 5849355098457107378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime z\u0131plama137x64 (1)_23"
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 3
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5f83f22cbc40f50800000000000000
+      internalID: 6846821368386352573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Slime z\u0131plama137x64 (1)_0": 1756762251769781047
+      "Slime z\u0131plama137x64 (1)_1": -1870422918564018584
+      "Slime z\u0131plama137x64 (1)_10": 578846719373767262
+      "Slime z\u0131plama137x64 (1)_11": -7033948769294915623
+      "Slime z\u0131plama137x64 (1)_12": 5246096727937546994
+      "Slime z\u0131plama137x64 (1)_13": -7996921612899182095
+      "Slime z\u0131plama137x64 (1)_14": 9097444866154598487
+      "Slime z\u0131plama137x64 (1)_15": 4393324469902798429
+      "Slime z\u0131plama137x64 (1)_16": 8761409358300265981
+      "Slime z\u0131plama137x64 (1)_17": 3931486068134068121
+      "Slime z\u0131plama137x64 (1)_18": -3338421711733685880
+      "Slime z\u0131plama137x64 (1)_19": 1350815403217568240
+      "Slime z\u0131plama137x64 (1)_2": 4715432651386103649
+      "Slime z\u0131plama137x64 (1)_20": -6268626367195858606
+      "Slime z\u0131plama137x64 (1)_21": 5651391632582767470
+      "Slime z\u0131plama137x64 (1)_22": 5849355098457107378
+      "Slime z\u0131plama137x64 (1)_23": 6846821368386352573
+      "Slime z\u0131plama137x64 (1)_3": 3171559565461754553
+      "Slime z\u0131plama137x64 (1)_4": -6276108254280296125
+      "Slime z\u0131plama137x64 (1)_5": 8490842555781832
+      "Slime z\u0131plama137x64 (1)_6": -9077568933225257313
+      "Slime z\u0131plama137x64 (1)_7": 4911317346527211165
+      "Slime z\u0131plama137x64 (1)_8": -394082636356665181
+      "Slime z\u0131plama137x64 (1)_9": 2360384466548419454
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
