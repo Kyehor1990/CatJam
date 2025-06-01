@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float wallBounceLockTime = 0.2f;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public bool isGrounded;
     private float moveInput;
     private bool isCrouching;
     public bool isDodging;

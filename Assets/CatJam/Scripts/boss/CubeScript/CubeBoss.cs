@@ -20,6 +20,8 @@ public class CubeBoss : MonoBehaviour
     private bool isAttacking = false;
     private int attackType = 0;
 
+    [SerializeField] PlayerEmote playerEmote;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -43,7 +45,7 @@ public class CubeBoss : MonoBehaviour
 
         cooldownTimer -= Time.deltaTime;
 
-        if (cooldownTimer <= 0f)
+        if (cooldownTimer <= 0f && playerEmote.stress < 100)
         {
             ChooseRandomAttack();
         }
@@ -77,15 +79,15 @@ public class CubeBoss : MonoBehaviour
     {
         switch (attackType)
         {
-case 0: // Lazer
-    GameObject laser = Instantiate(laserPrefab, laserSpawnPoint.position, Quaternion.identity);
+            case 0: // Lazer
+                GameObject laser = Instantiate(laserPrefab, laserSpawnPoint.position, Quaternion.identity);
 
-    // Oyuncunun sağda mı solda mı olduğunu kontrol et
-    bool flipLaser = player.position.x < transform.position.x;
+                // Oyuncunun sağda mı solda mı olduğunu kontrol et
+                bool flipLaser = player.position.x < transform.position.x;
 
-    // Lazer büyümesini başlat
-    laser.GetComponent<LaserGrow>().StartGrow(flipLaser);
-    break;
+                // Lazer büyümesini başlat
+                laser.GetComponent<LaserGrow>().StartGrow(flipLaser);
+                break;
 
 
             case 1: // Mermi
@@ -94,16 +96,16 @@ case 0: // Lazer
                 proj.GetComponent<ProjectileAttack>().SetDirection(direction);
                 break;
 
-case 2:
-    GameObject spike = Instantiate(spikePrefab, spikeSpawnPoint.position, Quaternion.identity);
-    Vector3 scale = spike.transform.localScale;
-    if (player.position.x > transform.position.x)
-{
-    scale.x *= -1;
-}
+            case 2:
+                GameObject spike = Instantiate(spikePrefab, spikeSpawnPoint.position, Quaternion.identity);
+                Vector3 scale = spike.transform.localScale;
+                if (player.position.x > transform.position.x)
+                {
+                    scale.x *= -1;
+                }
 
-spike.transform.localScale = scale;
-    break;
+                spike.transform.localScale = scale;
+                break;
         }
 
         EndAttack();
@@ -113,5 +115,15 @@ spike.transform.localScale = scale;
     {
         isAttacking = false;
         cooldownTimer = attackCooldown;
+    }
+
+    public void Die()
+    {
+        animator.SetTrigger("Die");
+    }
+
+    public void AfterDie()
+    {
+        Destroy(gameObject);
     }
 }

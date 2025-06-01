@@ -9,6 +9,13 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Slider healthSlider;
 
     private PlayerMovement playerMovement;
+    private PlayerEmote playerEmote;
+
+    void Awake()
+    {
+        playerEmote = GetComponent<PlayerEmote>();
+    }
+
 
     void Start()
     {
@@ -32,19 +39,6 @@ void Update()
 
     public void TakeDamage(int amount)
     {
-        /*if (playerMovement != null && playerMovement.IsDodging())
-        {
-            Debug.Log("Dodge aktif! Hasar alınmadı.");
-            return;
-        }
-
-        currentHealth -= amount;
-        Debug.Log("Hasar alındı! Kalan can: " + currentHealth);
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }*/
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
@@ -55,6 +49,14 @@ void Update()
         if (currentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    public void AttackStress(int amount)
+    {
+        if ( playerEmote.stress >= amount)
+        {
+            playerEmote.stress -= amount;
         }
     }
 

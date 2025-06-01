@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524bc07f93c01bb43b07e782787d5f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stress: 0
   shortEmoteDuration: 1
   mediumEmoteDuration: 2
   longEmoteDuration: 3
@@ -804,6 +805,7 @@ MonoBehaviour:
   mediumEmoteStress: 10
   longEmoteStress: 15
   stressSlider: {fileID: 462289069}
+  cubeBoss: {fileID: 873668558}
 --- !u!4 &591726974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8440468370359610552, guid: 81e4c012d8d74ff4f922e0f3153918b4, type: 3}
@@ -1156,6 +1158,7 @@ MonoBehaviour:
   spikeSpawnPoint: {fileID: 106923632}
   player: {fileID: 591726974}
   attackCooldown: 2
+  playerEmote: {fileID: 591726967}
 --- !u!95 &873668559
 Animator:
   serializedVersion: 7

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerEmote : MonoBehaviour
 {
-    private int stress = 0;
+    public int stress = 0;
     private int maxStress = 100;
 
     [Header("Emote Süreleri")]
@@ -25,6 +25,8 @@ public class PlayerEmote : MonoBehaviour
     private PlayerMovement playerMovement;
     private bool emoteInterrupted = false;
 
+    [SerializeField] CubeBoss cubeBoss;
+
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -44,9 +46,9 @@ public class PlayerEmote : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
                 StartEmote(shortEmoteDuration, shortEmoteStress);
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && playerMovement.isGrounded)
                 StartEmote(mediumEmoteDuration, mediumEmoteStress);
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && playerMovement.isGrounded)
                 StartEmote(longEmoteDuration, longEmoteStress);
         }
         else
@@ -93,6 +95,11 @@ public class PlayerEmote : MonoBehaviour
         if (success)
         {
             stress += currentEmoteStress;
+            if (stress >= maxStress)
+            {
+                cubeBoss.Die();
+            }
+
             Debug.Log($"Emote tamamlandı! Toplam stres: {stress}");
         }
 

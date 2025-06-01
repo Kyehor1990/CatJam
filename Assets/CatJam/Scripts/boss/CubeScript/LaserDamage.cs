@@ -3,6 +3,7 @@ using UnityEngine;
 public class LaserDamage : MonoBehaviour
 {
     public int damageAmount = 1;
+    public int stressAmount = 5;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,6 +13,7 @@ public class LaserDamage : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damageAmount);
+                playerHealth.AttackStress(stressAmount);
             }
         }
     }
