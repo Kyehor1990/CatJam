@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 873668556}
   - component: {fileID: 873668558}
   - component: {fileID: 873668559}
+  - component: {fileID: 873668560}
   m_Layer: 0
   m_Name: CubeBoss
   m_TagString: Untagged
@@ -1166,6 +1167,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &873668560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873668553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d472c7f4da1be40a7af04629882f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushValue: 5
+  playerHealth: {fileID: 1158937616}
 --- !u!1 &878692001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1557,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134524246}
   m_CullTransparentMesh: 1
+--- !u!114 &1158937616 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8264934476332103963, guid: ae6d97958bcdba04b81762dd069d2487, type: 3}
+  m_PrefabInstance: {fileID: 8569932869557256116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53aa9cd2d9245d346b658681e1b9bc2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1281181823
 GameObject:
   m_ObjectHideFlags: 0

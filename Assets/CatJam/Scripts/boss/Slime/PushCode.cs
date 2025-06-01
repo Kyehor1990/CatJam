@@ -6,6 +6,8 @@ public class PushCode : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public PlayerHealth playerHealth;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,7 +23,8 @@ public class PushCode : MonoBehaviour
         {
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (playerRb != null)
-            {
+            {   
+                playerHealth.TakeDamage(10); // Oyuncuya hasar ver
                 // Boss'tan oyuncuya yön (oyuncuya itme)
                 Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
 
