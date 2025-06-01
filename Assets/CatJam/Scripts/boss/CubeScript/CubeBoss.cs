@@ -39,11 +39,6 @@ public class CubeBoss : MonoBehaviour
             transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
 
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            ChooseRandomAttack();
-        }
-
         if (isAttacking) return;
 
         cooldownTimer -= Time.deltaTime;
@@ -59,7 +54,6 @@ public class CubeBoss : MonoBehaviour
         attackType = Random.Range(0, 3); // 0: Lazer, 1: Mermi, 2: Diken
         isAttacking = true;
 
-        attackType = 0;
         {
             animator = GetComponent<Animator>();
         }
@@ -83,9 +77,16 @@ public class CubeBoss : MonoBehaviour
     {
         switch (attackType)
         {
-            case 0: // Lazer
-                Instantiate(laserPrefab, laserSpawnPoint.position, Quaternion.identity);
-                break;
+case 0: // Lazer
+    GameObject laser = Instantiate(laserPrefab, laserSpawnPoint.position, Quaternion.identity);
+
+    // Oyuncunun sağda mı solda mı olduğunu kontrol et
+    bool flipLaser = player.position.x < transform.position.x;
+
+    // Lazer büyümesini başlat
+    laser.GetComponent<LaserGrow>().StartGrow(flipLaser);
+    break;
+
 
             case 1: // Mermi
                 GameObject proj = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
