@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfcd63238f61c449b51141fe215bfc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 0}
+  laserPrefab: {fileID: 584936076578963200, guid: fbcd8e88e919c494690a85083063fb05, type: 3}
   laserSpawnPoint: {fileID: 878692002}
   projectilePrefab: {fileID: 7270387703643326831, guid: 86bd1f7424b4a3a428fdba959f5cc927, type: 3}
   projectileSpawnPoint: {fileID: 1281181824}
@@ -1881,11 +1881,11 @@ PrefabInstance:
       objectReference: {fileID: 68664387}
     - target: {fileID: 8440468370359610552, guid: 81e4c012d8d74ff4f922e0f3153918b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.53
+      value: -6.76
       objectReference: {fileID: 0}
     - target: {fileID: 8440468370359610552, guid: 81e4c012d8d74ff4f922e0f3153918b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.82
+      value: -2.41
       objectReference: {fileID: 0}
     - target: {fileID: 8440468370359610552, guid: 81e4c012d8d74ff4f922e0f3153918b4, type: 3}
       propertyPath: m_LocalPosition.z

@@ -39,6 +39,11 @@ public class CubeBoss : MonoBehaviour
             transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
 
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ChooseRandomAttack();
+        }
+
         if (isAttacking) return;
 
         cooldownTimer -= Time.deltaTime;
@@ -53,6 +58,11 @@ public class CubeBoss : MonoBehaviour
     {
         attackType = Random.Range(0, 3); // 0: Lazer, 1: Mermi, 2: Diken
         isAttacking = true;
+
+        attackType = 0;
+        {
+            animator = GetComponent<Animator>();
+        }
 
         // Saldırı türüne göre animasyon tetikleyelim
         switch (attackType)
