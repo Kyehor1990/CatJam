@@ -49,6 +49,7 @@ public class BossMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.isKinematic = false;  // Dinamik olmalı
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -60,7 +61,7 @@ public class BossMovement : MonoBehaviour
             ExecutePattern(AttackPattern.StretchArm);
         }
 
-        if (!isAttacking && !isCooldown && Vector2.Distance(transform.position, player.position) <= attackRange)
+        if (!isAttacking && !isCooldown && player != null && Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             isAttacking = true;
             AttackPattern pattern = ChooseRandomPattern();
@@ -70,34 +71,61 @@ public class BossMovement : MonoBehaviour
         FlipTowardsPlayer();
     }
 
-    void FixedUpdate()
+   void FixedUpdate()
+{
+    if (!isCooldown)
     {
-        if (!isAttacking && !isCooldown && Vector2.Distance(transform.position, player.position) > attackRange)
+        if (isAttacking)
         {
-            FollowPlayer();
+            // Eğer zıplama animasyonu oynanıyorsa hareket devam etsin
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack"))  
+            {
+                // Hareket kontrolünü burada yapabilirsin,
+                // mesela oyuncuya doğru yatay hız ver
+                Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
+                rb.velocity = new Vector2(direction.x * moveSpeed*20, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            // Normal takip mantığı
+            if (Vector2.Distance(transform.position, player.position) > attackRange)
+            {
+                FollowPlayer();
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
+}
+
 
     void FollowPlayer()
     {
         if (player == null) return;
 
+        // Sadece X ekseninde takip için
         Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
-        rb.velocity = direction * moveSpeed;
+        rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
     }
 
     void FlipTowardsPlayer()
     {
-        if (player != null)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = player.position.x < transform.position.x ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }
+        if (player == null) return;
+
+        Vector3 scale = transform.localScale;
+        if (player.position.x < transform.position.x)
+            scale.x = Mathf.Abs(scale.x);
+        else
+            scale.x = -Mathf.Abs(scale.x);
+
+        transform.localScale = scale;
     }
 
     AttackPattern ChooseRandomPattern()
@@ -121,7 +149,6 @@ public class BossMovement : MonoBehaviour
                 break;
         }
 
-        // Güvenlik için 5 saniye sonra bile çıkmazsa zorla sonlandır
         CancelInvoke(nameof(ForceAttackEnd));
         Invoke(nameof(ForceAttackEnd), attackFailSafeTimer);
     }
@@ -135,19 +162,19 @@ public class BossMovement : MonoBehaviour
         }
     }
 
-    // ANİMASYON EVENTLERİNDEN ÇAĞRILACAK
+    // === ANIMATION EVENTS ===
 
     public void DoJumpAttack()
     {
         if (player == null || !IsGrounded()) return;
 
         Vector2 direction = (player.position - transform.position).normalized;
-        direction.y = 1f; // yukarı yön vererek zıplama
-
-        rb.velocity = direction * jumpForce;
+        Vector2 jumpVelocity = new Vector2(direction.x * jumpForce * 0.7f, jumpForce);
+        rb.velocity = jumpVelocity;
         hasJumped = true;
 
-        Invoke(nameof(CheckJumpHit), 0.5f); // Zıplama sonrası hasar kontrolü
+        FlipTowardsPlayer();
+        Invoke(nameof(CheckJumpHit), 0.5f);
     }
 
     void CheckJumpHit()
@@ -160,7 +187,7 @@ public class BossMovement : MonoBehaviour
             PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(20); // Hasar miktarı isteğe bağlı
+                playerHealth.TakeDamage(20);
                 playerHealth.AttackStress(10);
             }
         }
@@ -171,16 +198,15 @@ public class BossMovement : MonoBehaviour
 
     public void DoStretchArm()
     {
-        if (stretchArmPrefab != null && midProjectileSpawnPoint != null)
-        {
-            float direction = transform.localScale.x > 0 ? 1f : -1f;
-            Quaternion rotation = direction > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+        if (stretchArmPrefab == null || midProjectileSpawnPoint == null) return;
 
-            GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, rotation);
-            arm.transform.parent = transform;
+        float direction = transform.localScale.x > 0 ? 1f : -1f;
+        Quaternion rotation = direction > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
 
-            Invoke(nameof(DestroyStretchArm), 2f);
-        }
+        GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, rotation);
+        arm.transform.parent = transform;
+
+        Invoke(nameof(DestroyStretchArm), 2f);
     }
 
     void DestroyStretchArm()
@@ -192,10 +218,13 @@ public class BossMovement : MonoBehaviour
                 Destroy(child.gameObject);
             }
         }
+        OnAttackEnd();
     }
 
     public void DoProjectileAttack()
     {
+        if (player == null) return;
+
         Vector2 dir = (player.position - transform.position).normalized;
         int randomIndex = Random.Range(0, 3);
 
@@ -232,13 +261,22 @@ public class BossMovement : MonoBehaviour
             }
             Destroy(instance, projectileDestroyTime);
         }
+
+        Invoke(nameof(OnAttackEnd), 0.5f);
     }
 
     public void OnAttackEnd()
     {
         isAttacking = false;
         isCooldown = true;
+
+        // Hareketi hemen durdur
         rb.velocity = Vector2.zero;
+
+        animator.ResetTrigger("JumpAttack");
+        animator.ResetTrigger("StretchArm");
+        animator.ResetTrigger("ProjectileAttack");
+
         CancelInvoke(nameof(ForceAttackEnd));
         Invoke(nameof(ResetCooldown), attackCooldown);
     }
