@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: b7d191c31c32d12429408a50fe79cdea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9100105527193259606
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_0"
+  - first:
+      213: 287858674362699214
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_1"
+  - first:
+      213: -5360078008505507122
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_2"
+  - first:
+      213: -5290210249021702561
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_3"
+  - first:
+      213: 6549851937729076378
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_4"
+  - first:
+      213: -7722971015063220156
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_5"
+  - first:
+      213: 7099479973908286708
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_6"
+  - first:
+      213: -7597401395613729647
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_7"
+  - first:
+      213: -8765330504838113208
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_8"
+  - first:
+      213: -3879853620439575879
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_9"
+  - first:
+      213: 6949890086246265150
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_10"
+  - first:
+      213: -8525759909185225727
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_11"
+  - first:
+      213: -3441581130314732226
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_12"
+  - first:
+      213: 1288459980900163160
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_13"
+  - first:
+      213: -1928223928601197586
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_14"
+  - first:
+      213: 5745694146901209012
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_15"
+  - first:
+      213: 5194182636030712031
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_16"
+  - first:
+      213: 4537338265690101535
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_17"
+  - first:
+      213: 6180593466737724007
+    second: "Slime diken sald\u0131r\u0131 idle 315x128_18"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_0"
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1b319cc3ee5b180800000000000000
+      internalID: -9100105527193259606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_1"
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 15
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd47ee60fdaef300800000000000000
+      internalID: 287858674362699214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_2"
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 15
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec265ae337d2d95b0800000000000000
+      internalID: -5360078008505507122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_3"
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 14
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e3ee7aec56596b0800000000000000
+      internalID: -5290210249021702561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_4"
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 14
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9cdebf72afb5ea50800000000000000
+      internalID: 6549851937729076378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_5"
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 14
+        width: 43
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440d484a7ce72d490800000000000000
+      internalID: -7722971015063220156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_6"
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 14
+        width: 43
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc8dceeb6b668260800000000000000
+      internalID: 7099479973908286708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_7"
+      rect:
+        serializedVersion: 2
+        x: 2245
+        y: 13
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19cf266feab909690800000000000000
+      internalID: -7597401395613729647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_8"
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 13
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8489a38b85a4b5680800000000000000
+      internalID: -8765330504838113208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_9"
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b29f2540bdf72ac0800000000000000
+      internalID: -3879853620439575879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_10"
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31b7ba1638f27060800000000000000
+      internalID: 6949890086246265150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_11"
+      rect:
+        serializedVersion: 2
+        x: 3497
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c7fb4b88a6ea980800000000000000
+      internalID: -8525759909185225727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_12"
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d27ed323c0d30d0800000000000000
+      internalID: -3441581130314732226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_13"
+      rect:
+        serializedVersion: 2
+        x: 4127
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e5cdca68781e110800000000000000
+      internalID: 1288459980900163160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_14"
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee341589d829d35e0800000000000000
+      internalID: -1928223928601197586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_15"
+      rect:
+        serializedVersion: 2
+        x: 4757
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf6616726eccbf40800000000000000
+      internalID: 5745694146901209012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_16"
+      rect:
+        serializedVersion: 2
+        x: 5072
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8dc176691751840800000000000000
+      internalID: 5194182636030712031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_17"
+      rect:
+        serializedVersion: 2
+        x: 5387
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17de30ec1dd7fe30800000000000000
+      internalID: 4537338265690101535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Slime diken sald\u0131r\u0131 idle 315x128_18"
+      rect:
+        serializedVersion: 2
+        x: 5702
+        y: 13
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a80060301e5c550800000000000000
+      internalID: 6180593466737724007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Slime diken sald\u0131r\u0131 idle 315x128_0": -9100105527193259606
+      "Slime diken sald\u0131r\u0131 idle 315x128_1": 287858674362699214
+      "Slime diken sald\u0131r\u0131 idle 315x128_10": 6949890086246265150
+      "Slime diken sald\u0131r\u0131 idle 315x128_11": -8525759909185225727
+      "Slime diken sald\u0131r\u0131 idle 315x128_12": -3441581130314732226
+      "Slime diken sald\u0131r\u0131 idle 315x128_13": 1288459980900163160
+      "Slime diken sald\u0131r\u0131 idle 315x128_14": -1928223928601197586
+      "Slime diken sald\u0131r\u0131 idle 315x128_15": 5745694146901209012
+      "Slime diken sald\u0131r\u0131 idle 315x128_16": 5194182636030712031
+      "Slime diken sald\u0131r\u0131 idle 315x128_17": 4537338265690101535
+      "Slime diken sald\u0131r\u0131 idle 315x128_18": 6180593466737724007
+      "Slime diken sald\u0131r\u0131 idle 315x128_2": -5360078008505507122
+      "Slime diken sald\u0131r\u0131 idle 315x128_3": -5290210249021702561
+      "Slime diken sald\u0131r\u0131 idle 315x128_4": 6549851937729076378
+      "Slime diken sald\u0131r\u0131 idle 315x128_5": -7722971015063220156
+      "Slime diken sald\u0131r\u0131 idle 315x128_6": 7099479973908286708
+      "Slime diken sald\u0131r\u0131 idle 315x128_7": -7597401395613729647
+      "Slime diken sald\u0131r\u0131 idle 315x128_8": -8765330504838113208
+      "Slime diken sald\u0131r\u0131 idle 315x128_9": -3879853620439575879
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
