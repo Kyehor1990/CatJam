@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class BossMovement : MonoBehaviour
@@ -13,7 +12,7 @@ public class BossMovement : MonoBehaviour
     [Header("Player & Movement")]
     public Transform player;
     public float moveSpeed = 2f;
-    public float attackRange = 5f;
+    public float attackRange = 10f;
 
     [Header("Cooldown")]
     public float attackCooldown = 3f;
@@ -38,6 +37,7 @@ public class BossMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    private float attackFailSafeTimer = 5f;
 
     void Start()
     {
@@ -48,7 +48,7 @@ public class BossMovement : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             ExecutePattern(AttackPattern.StretchArm);
         }
@@ -60,18 +60,28 @@ public class BossMovement : MonoBehaviour
             ExecutePattern(pattern);
         }
 
-        if (!isAttacking)
+        FlipTowardsPlayer();
+    }
+
+    void FixedUpdate()
+    {
+        if (!isAttacking && !isCooldown && Vector2.Distance(transform.position, player.position) > attackRange)
         {
             FollowPlayer();
         }
-
-        FlipTowardsPlayer();
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     void FollowPlayer()
     {
+        if (player == null) return;
+
         Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
-        rb.linearVelocity = direction * moveSpeed;
+        rb.velocity = direction * moveSpeed;
+
     }
 
     void FlipTowardsPlayer()
@@ -104,27 +114,24 @@ public class BossMovement : MonoBehaviour
                 animator.SetTrigger("ProjectileAttack");
                 break;
         }
+
+        // Güvenlik için 5 saniye sonra bile çıkmazsa zorla sonlandır
+        CancelInvoke(nameof(ForceAttackEnd));
+        Invoke(nameof(ForceAttackEnd), attackFailSafeTimer);
     }
 
-    // --- Animasyon event fonksiyonları ---
-    // Animasyon event'leri bu fonksiyonları çağıracak!
-
-    /*public void DoJumpAttack()
+    void ForceAttackEnd()
     {
-        Debug.Log("Jump Attack Executed");
-        Vector2 jumpDir = new Vector2(player.position.x - transform.position.x, 0).normalized;
-        float jumpForceX = 8f;
-        float jumpHeight = 4f;
-        float gravity = Mathf.Abs(Physics2D.gravity.y);
-        float jumpForceY = Mathf.Sqrt(2 * jumpHeight * gravity);
+        if (isAttacking)
+        {
+            Debug.LogWarning("Attack stuck, forcing reset.");
+            OnAttackEnd();
+        }
+    }
 
-        rb.linearVelocity = new Vector2(jumpDir.x * jumpForceX, jumpForceY);
-    }*/
-
+    // ANİMASYON EVENTLERİNDEN ÇAĞRILACAK
     public void DoStretchArm()
     {
-        Debug.Log("Stretch Arm Executed");
-
         if (stretchArmPrefab != null && midProjectileSpawnPoint != null)
         {
             float direction = transform.localScale.x > 0 ? 1f : -1f;
@@ -133,23 +140,23 @@ public class BossMovement : MonoBehaviour
             GameObject arm = Instantiate(stretchArmPrefab, midProjectileSpawnPoint.position, rotation);
             arm.transform.parent = transform;
 
-            // 2 saniye sonra yok et (Invoke ile)
             Invoke(nameof(DestroyStretchArm), 2f);
         }
     }
 
     void DestroyStretchArm()
     {
-        Transform arm = transform.Find(stretchArmPrefab.name + "(Clone)");
-        if (arm != null)
+        foreach (Transform child in transform)
         {
-            Destroy(arm.gameObject);
+            if (child.name.Contains(stretchArmPrefab.name))
+            {
+                Destroy(child.gameObject);
+            }
         }
     }
 
     public void DoProjectileAttack()
     {
-        Debug.Log("Slime Projectile Executed");
         Vector2 dir = (player.position - transform.position).normalized;
         int randomIndex = Random.Range(0, 3);
 
@@ -182,30 +189,38 @@ public class BossMovement : MonoBehaviour
             Rigidbody2D projRb = instance.GetComponent<Rigidbody2D>();
             if (projRb != null)
             {
-                projRb.linearVelocity = dir * speed;
+                projRb.velocity = dir * speed;
             }
             Destroy(instance, projectileDestroyTime);
         }
     }
 
-    // Animasyon sonunda çağrılacak event ile saldırı bitti ve cooldown başlıyor
     public void OnAttackEnd()
     {
-        Debug.Log("Attack ended, cooldown started");
         isAttacking = false;
         isCooldown = true;
+        rb.velocity = Vector2.zero;
+        CancelInvoke(nameof(ForceAttackEnd));
         Invoke(nameof(ResetCooldown), attackCooldown);
     }
 
     void ResetCooldown()
     {
         isCooldown = false;
-        Debug.Log("Cooldown ended");
     }
 
     bool IsGrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.down * 0.1f, Vector2.down, 0.2f, LayerMask.GetMask("Ground"));
         return hit.collider != null;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (player != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
     }
 }
