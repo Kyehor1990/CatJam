@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             moveInput = wallBounceInputLockTimer <= 0 ? Input.GetAxisRaw("Horizontal") : 0;
         }
 
-        Crouch(Input.GetKey(KeyCode.LeftControl));
+        Crouch(Input.GetKey(KeyCode.S));
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isCrouching && !isDodging)
         {
